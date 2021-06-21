@@ -582,13 +582,13 @@
     background: url(../img/sup-block-v2.png) no-repeat;
 }
 .sup-block-v2 .sup-cont>li:nth-child(1):before{
-    background-position: 0 0;
+    background-position: -312px 0;
 }
 .sup-block-v2 .sup-cont>li:nth-child(2):before{
-    background-position: -104px 0;
+    background-position: -312px 0;
 }
 .sup-block-v2 .sup-cont>li:nth-child(3):before{
-    background-position: -208px 0;
+    background-position: -312px 0;
 }
 .sup-block-v2 .sup-cont>li:nth-child(4):before{
     background-position: -312px 0;
