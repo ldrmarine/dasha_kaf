@@ -1136,7 +1136,6 @@
 .rev-block-v3 .rev-item>img{
     display: block;
     width: 400px;
-    height: 260px;
     margin: 0 auto 20px;
     border-radius: 4px;
 }
@@ -1394,9 +1393,7 @@
 }
 
 .use_section .sup-cont>li p {
-    font-weight: 700;
     font-size: 18px;
-    text-transform: uppercase;
 }
 
 .use_section .description {
