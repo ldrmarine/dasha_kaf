@@ -10,56 +10,23 @@
 // ##########
 
 .intro {
-  background-color: #252525;
-  &__top {
-    font-style: normal;
-    font-weight: 900;
-    font-size: 0.22rem;
-    text-align: center;
-    color: #ffffff;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    background-color: $accent;
-    padding: 0.1rem 0;
-  }
-  &__main {
-    background-image: url(../../img/intro.png);
-    background-size: cover;
-    height: 4.26rem;
-  }
-
-  &__list {
-    padding-top: 2.25rem;
-  }
-  &__item {
-    @include flex(row, $item: center);
-    background-color: #fff;
-    max-width: 2.7rem;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
-    border-radius: 0px 5px 5px 0px;
-    margin-bottom: 0.1rem;
-    padding: 0.03rem 0.1rem;
-    padding-left: 0.05rem;
-    font-size: 0.18rem;
-    p {
-      margin: 0;
-    }
-    img {
-      width: 0.2rem;
-      margin-right: 0.15rem;
-    }
-  }
-  &__footer {
-    padding-top: 0.9rem;
-  }
-  &__progress {
-    padding: 0.3rem 0;
-    text-align: center;
+  &__title {
+    background-image: url(../../img/intro_title.png);
+    min-height: 1.39rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    @include flex (row,center,center);
+    position: relative;
     color: #fff;
-    @include flex(column, center, center);
-    img {
-      max-width: 4.44rem;
-      display: block;
-      margin: 0 auto;
+    &::before {
+      content: "+";
+      font-weight: 900;
+      font-size: 1rem;
+      position: absolute;
+      top: auto;
+      left: 0.58rem;
+      line-height: 36px;
+      color: #ffffff;
     }
   }
 }
