@@ -8,14 +8,20 @@
 // ##########
 // main
 // ##########
-
+.main {
+  position: relative;
+  z-index: 1;
+}
 .intro {
+  position: relative;
   &__title {
     background-image: url(../../img/intro_title.png);
     min-height: 1.39rem;
     background-repeat: no-repeat;
     background-size: contain;
-    @include flex (row,center,center);
+    text-transform: uppercase;
+    font-family: Nunito-Black;
+    @include flex(row, center, center);
     position: relative;
     color: #fff;
     &::before {
@@ -23,73 +29,156 @@
       font-weight: 900;
       font-size: 1rem;
       position: absolute;
-      top: auto;
-      left: 0.58rem;
+      top: 0.3rem;
+      left: 0.5rem;
       line-height: 36px;
       color: #ffffff;
     }
-  }
-}
-
-.price {
-  height: 1rem;
-  width: 4.24rem;
-  margin: 0 auto;
-  margin-top: -0.5rem;
-  margin-bottom: -0.5rem;
-  padding: 0 0.1rem;
-  box-sizing: border-box;
-  background-image: url(../../img/sale.png);
-  background-size: contain;
-  position: relative;
-  @include flex(row, space-around, center);
-  p {
-    margin: 0;
-  }
-
-  &__item {
-    text-align: center;
-    font-size: 0.18rem;
-    width: 1.4rem;
-    font-weight: 600;
-    &:first-child {
-      color: #b6b6b6;
+    h2 {
+      font-weight: 900;
+      font-size: 0.3rem;
     }
-
-    &--percent {
-      padding-top: 0.3rem;
-      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    .box-text {
+      width: 2.7rem;
+      text-align: center;
+      padding: 0 0.2rem;
+    }
+  }
+  &__trigger {
+    background-image: url(../../img/intro_trigger.png);
+    height: 2.6rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    background-position: right;
+    margin-top: -0.1rem;
+    box-sizing: border-box;
+    padding-top: 0.6rem;
+    position: relative;
+    z-index: 99;
+    p {
+      margin: 0;
+      font-family: Nunito-Black;
+      margin-left: 0.63rem;
+      font-weight: 900;
+      font-size: 0.23rem;
+      height: 1.03rem;
+      width: 2.62rem;
+    }
+  }
+  &__price {
+    height: 4.9rem;
+    background-image: url(../../img/intro_bg.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-top: -1.2rem;
+    box-sizing: border-box;
+    z-index: -1;
+    padding-top: 1.86rem;
+    @include flex(column, flex-start, flex-end);
+    p {
+      background-image: url(../../img/sale.png);
+      background-size: contain;
+      height: 0.41rem;
+      width: 1.88rem;
+      margin-top: 0;
+      margin-bottom: 0.1rem;
+      text-align: center;
+      @include flex(row, center, center);
+      font-weight: bold;
+      font-size: 0.25rem;
       color: #fff;
-      font-weight: 600;
+    }
+    b,
+    s {
+      display: block;
+      padding-right: 0.16rem;
+      line-height: 1.1;
+    }
+    b {
+      font-weight: 900;
+      font-size: 0.5rem;
+      font-family: Nunito-Black;
+      color: #000000;
+    }
+    s {
+      color: #4fafe2;
+      font-weight: bold;
+      font-size: 0.3rem;
     }
   }
-  &__value {
-    font-size: 0.3rem;
+  .list {
+    @include flex(column, flex-start, flex-start);
+    &__item {
+      @include flex(row, flex-start, center);
+      img {
+        width: 0.85rem;
+        margin-right: 0.22rem;
+      }
+      p {
+        font-weight: bold;
+        font-size: 0.24rem;
+        margin: 0;
+      }
+    }
   }
 }
 
 .sect1 {
-  &__img-wrap {
-    position: relative;
-    span {
-      position: absolute;
-      color: #fff;
-      right: 0.5rem;
-      bottom: 0.82rem;
-      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-      transform: rotate(-5.08deg);
-      text-transform: uppercase;
-      font-size: 0.11rem;
-      font-weight: bold;
-    }
-  }
+  background: #edf7fd;
 }
 
 .sect2 {
-  background-color: #252525;
-  color: #fff;
+  img {
+    margin-top: -0.3rem;
+  }
+  .gift {
+    background-image: url(../../img/gift.png);
+    background-size: contain;
+    height: 2.16rem;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    padding-left: 0.3rem;
+    padding-top: 0.45rem;
+    p {
+      margin: 0;
+      width: 3.18rem;
+      font-size: 0.18rem;
+    }
+  }
 }
-
+.sect3 {
+  img {
+    z-index: 2;
+    position: relative;
+  }
+  &__list {
+    @include flex(row, flex-start, center);
+    position: relative;
+    z-index: 1;
+    p {
+      width: 2.74rem;
+      box-sizing: border-box;
+      margin-left: -0.15rem;
+      padding-bottom: 0.2rem;
+      position: relative;
+      font-size: 0.18rem;
+      padding-left: 0.22rem;
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 90%;
+        bottom: 0;
+        background-image: url(../../img/sect3_list.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        left: 0;
+        height: 0.14rem;
+      }
+    }
+  }
+}
 .slider {
   &__control {
     @include flex(row, space-around, center);
@@ -130,8 +219,23 @@
 }
 
 .sect4 {
-  background-color: #252525;
-  color: #fff;
+  &__list {
+    margin-top: 0.4rem;
+  }
+  &__item {
+    @include flex(row, flex-start, center);
+    p {
+      padding-right: 0.3rem;
+    }
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+      p {
+        padding-right: 0;
+        padding-left: 0.3rem;
+      }
+    }
+  }
 }
 
 .reviews {
@@ -139,22 +243,27 @@
 }
 
 .reviews {
+  &__item {
+    width: 4.3rem;
+    margin: 0 auto;
+  }
   &__header {
     background-color: #005d51;
     height: 0.62rem;
     @include flex(row, $item: center);
-    padding: 0 0.5rem;
+    padding: 0 0.2rem;
     img.ava {
-      width: 0.48rem;
+      width: 0.75rem;
       margin-right: 0.15rem;
     }
     img.phone {
-      width: 0.21rem;
+      width: 1.2rem;
       margin-left: auto;
     }
     p {
       margin: 0;
       font-weight: bold;
+      color: #fff;
       font-size: 0.21rem;
     }
   }
@@ -166,8 +275,9 @@
       color: #000;
       padding: 0.15rem;
       padding-bottom: 0.25rem;
-      max-width: 3.6rem;
+      max-width: 3.23rem;
       position: relative;
+      font-size: 0.17rem;
       box-sizing: border-box;
       span {
         position: absolute;
@@ -226,14 +336,32 @@
   }
 }
 
-.sect5 {
-  &__grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 0.25rem;
-    text-align: center;
-    b {
-      display: block;
+.sect6 {
+  background: #EDF7FD;
+  &__list{
+    margin-top: 0.4rem;
+  }
+  &__item {
+    &:not(:last-child){
+      margin-bottom: 0.37rem;
+    }
+    @include flex(column, flex-start, flex-start);
+    .box {
+      @include flex(row, flex-start, center);
+      width: 100%;
+      b {
+        font-weight: 900;
+        font-size: 0.4rem;
+        text-transform: uppercase;
+        font-family: Nunito-Black;
+        color: #4fafe2;
+        display: block;
+        width: 100%;
+      }
+      img {
+        width: 0.41rem;
+        margin-right: 0.2rem;
+      }
     }
   }
 }
