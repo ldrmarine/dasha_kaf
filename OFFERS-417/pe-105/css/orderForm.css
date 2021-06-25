@@ -1,0 +1,214 @@
+#product-block {
+    background: url(../img/order_tube.png) center center no-repeat;
+    height: 338px;
+    width: 100% !important;
+    display:block;
+    margin:0px 0px 0px 0px !important;
+    margin: 0!important;
+    /* margin: 0 0 0 -10% !important;*/
+    background-size:contain;
+    text-align: center;}
+  #product-block .plashka2-t{ color:#fff915; font-size:20px; line-height:25px; }
+  #product-block .plashka2 b{ text-shadow: 1px 1px 2px #373838; }
+  #product-block .plashka2 {
+    position: absolute;
+    background: center center no-repeat;
+    background-size: 190px 262px;
+    width: 190px !important;
+    height: 138px;
+    padding: 144px 30px 0 0;
+    line-height: 22px;
+    text-align: center;
+    font-size: 17px;
+    color: #fff;
+    margin: 48px 0 0 -10px !important;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: content-box;
+    z-index: 5;
+  }
+  @media screen and (max-width: 767px) {
+    #product-block {
+      width: 100% !important;
+      height: 224px !important;
+      margin: 0!important;
+      /* margin: 0 0 0 -10% !important;*/
+    }
+    #product-block .plashka2 {
+      background-size: 135px 188px;
+      width: 110px !important;
+      height: 98px;
+      padding: 95px 25px 0 0;
+      line-height: 16px;
+      font-size: 13px;
+      margin: 15px 0 0 0px !important;
+    }
+    #product-block .plashka2-t{font-size:14px;}
+  }
+  @media screen and (max-width: 720px) {
+  .renul_seDwyoGn57 .gelat_Bb6MhOHv {text-align:center}
+  }
+  @media screen and (max-width: 200px) {
+    #product-block .plashka2 {display:none;} }
+
+
+#order_form {
+    background: white;
+    padding: 20px;
+    max-width: 600px;
+    font-family: Arial;
+    margin: 20px;
+    background-image: url(../img/formbg.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 123%;
+}
+
+#order_form div {
+    background: transparent;
+}
+
+#order_form h2 {
+    margin: 25px 0 0 0;
+    padding: 0px;
+    line-height: 32px;
+    border: none;
+}
+
+#order_form label {
+    width: 230px;
+    display: block;
+    padding: 5px 0 5px 0;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+#order_form label.vertical {
+    border: none!important;
+}
+
+.device_info {
+    font-size: 14px;
+    color: green;
+    display: block;
+    margin: 10px 20px;
+}
+
+#order_form .order_form_pole {
+    padding: 10px;
+    margin: 10px;
+}
+
+#order_form input {
+    font-size: 21px;
+    padding: 15px;
+    border-radius: 3px;
+    border: 2px solid #e9d7dc;
+    max-width: 300px;
+    width: 100%;
+}
+
+#order_form span {
+    font-size: 12px;
+}
+
+#order_form button,
+.obutton {
+    display: inline-block;
+    padding: 20px;
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 4px 15px 0 rgba(129, 150, 160, 0.45);
+    border-radius: 5px;
+    background-color: #0299ff;
+    background-position: 1.35em .94em;
+    background-size: 1em;
+    background-repeat: no-repeat;
+    transition: all .15s ease-in-out;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+#order_form button:hover,
+.obutton:hover {
+    background-color: #017ACC;
+}
+
+#order_form button:active {
+    position: relative;
+    top: 1px;
+}
+
+.order_info h2 {
+    border: none!important;
+    color: red!important;
+}
+
+.left_count {
+    background: red;
+    padding: 23px;
+    margin: 12px 0px;
+    width: 178px;
+    color: #fff;
+    text-shadow: 0 -1px 0 #000000, 0 -1px 0 #000000, 0 1px 0 #000000, 0 1px 0 #000000, -1px 0 0 #000000, 1px 0 0 #000000, -1px 0 0 #000000, 1px 0 0 #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000;
+    font-size: 32px!important;
+    border-radius: 5px;
+}
+
+.left_count .prod_left_val {
+    font-size: 42px!important;
+    padding-right: 5px;
+}
+
+#order_form_success {
+    position: relative;
+}
+
+@media (min-width: 481px) and (max-width: 715px) {
+    #order_form {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #order_form input {}
+    #order_form label {
+        font-size: 14px;
+    }
+    #order_form button {
+        font-size: 16px;
+    }
+    #order_form {
+        padding: 10px;
+    }
+    #order_form .order_form_pole {
+        padding: 0px;
+        margin: 2px;
+    }
+}
+
+@media screen and (max-width: 459px) {
+    #order_form input {
+        width: 80%;
+    }
+    #order_form {
+        margin:0;
+            background-size: 100% 123%;
+            padding-bottom: 25px;
+
+    }
+    #comments {
+        margin-top: 0;
+    }
+}
+
+@media screen and (max-width: 349px) {
+    #order_form input {
+        font-size: 17px;
+    }
+    #order_form button {
+        margin-left: 0px;
+    }
+}
