@@ -386,7 +386,6 @@ body.adaptive [data-w-id="MENU01"] .header-style-panel .nav-menu { padding-top: 
 }
 [data-e-id="media01"] { --imageProportion:  60%; --imageMinHeight:  200px; }
 [data-e-id="media01"] .element-content { display: block; }
-[data-e-id="media01"] .component-image, [data-e-id="media01"] .component-video { padding-bottom:  var(--imageProportion,60%); }
 [data-e-id="media01"][data-element-justify="center"] .component-image__bg--contain { --imagePositionX:  50%; --imagePositionY:  50%; }
 .content-zone--rounded.px-0.py-0 [data-e-id="media01"] .element-content > [data-component], .no-gutter[data-e-id="media01"] .element-content > [data-component] { overflow: hidden; }
 .content-zone--rounded.px-0.py-0 .is-first-child[data-e-id="media01"] .element-content > [data-component], .no-gutter.is-first-child[data-e-id="media01"] .element-content > [data-component] { border-top-left-radius:  var(--topLeftRadius); border-top-right-radius:  var(--topRightRadius); }
