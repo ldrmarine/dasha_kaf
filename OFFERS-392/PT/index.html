@@ -5,6 +5,85 @@
 
     <script src="js/jquery.min_1.js"></script>
 
+    <script>
+        function set_validator_errors() {
+            orderValidator.errorTitle = 'Пожалуйста, исправьте следующие ошибки';
+
+            orderValidator.errorNameField = 'Имя';
+            orderValidator.errorNameMess = 'Укажите своё имя';
+
+            orderValidator.errorPhoneField = 'Телефон для связи';
+            orderValidator.errorPhoneMess = 'Введите правильный телефон';
+
+            orderValidator.errorAddress = 'Введите правильный адрес';
+            orderValidator.errorRequired = 'обязательное поле';
+            orderValidator.errorMaxLength = 'допустимо максимум {1} символа';
+            orderValidator.errorMinLength = 'допустимо минимум {1} символа';
+            orderValidator.errorEmailField = 'E-mail';
+            orderValidator.errorEmail = 'указан не корректный email';
+        }
+    </script>
+
+    <script>
+
+
+        window.app = {
+            timestamp: parseInt((new Date()).getTime() / 1000),
+            jq: jQuery,
+            formAction: window.location.href,
+            leadToken: '60bf8d5350dce3.14578810',
+            offers: { "24730": { "id": 24730, "country": { "code": "RU", "name": "\u0420\u043e\u0441\u0441\u0438\u044f" }, "price": "1390", "price2": "2950", "currency": { "code": "RUB", "name": "\u0440\u0443\u0431" }, "discount": "53%", "delivery_price": "", "link": "", "product_sku": "", "prepaid_info_html": "" } },
+            currentOffer: { "id": 24730, "country": { "code": "RU", "name": "\u0420\u043e\u0441\u0441\u0438\u044f" }, "price": "1390", "price2": "2950", "currency": { "code": "RUB", "name": "\u0440\u0443\u0431" }, "discount": "53%", "delivery_price": "", "link": "", "product_sku": "", "prepaid_info_html": "" },
+            allowedCountries: ["RU"],
+            _setOfferId: false,
+            streamHid: '',
+
+            setOffer: function (offerId) {
+                if (offerId == this._setOfferId) {
+                    return;
+                }
+                this._setOfferId = offerId;
+                if (offerId) {
+                    var offer = app.offers[offerId];
+                    var previousOffer = app.currentOffer;
+                    app.currentOffer = offer;
+                    var event = this.jq.Event("offerchange");
+                    event.previousOffer = previousOffer;
+                    event.currentOffer = app.currentOffer;
+                    this.jq(document).trigger(event);
+                    this.updatePage(offer);
+                } else {
+                    $('input[name=country]').val('');
+                }
+            },
+
+            updatePage: function (offer) {
+                $('x-newprice').html(offer.price);
+                $('x-oldprice').html(offer.price2);
+                $('x-currency').html(offer.currency.name);
+                $('input[name=offer], select[name=offer]').val(offer.id);
+                $('input[name=country]').val(offer.country.code);
+            },
+
+            blockForm: function () {
+                // Блокируем кнопки при отправке формы
+                $('input[type=submit]', $(this)).prop('disabled', true).attr('disabled', true);
+                $('button', $(this)).prop('disabled', true).attr('disabled', true);
+                app.incompleteOrder.lock = true;
+                clearTimeout(app.incompleteOrder.timer);
+            },
+
+            unblockForm: function () {
+                $('input[type=submit]', $(this)).prop('disabled', false).attr('disabled', false);
+                $('button[type=submit]', $(this)).prop('disabled', false).attr('disabled', false);
+                app.incompleteOrder.lock = false;
+                clearTimeout(app.incompleteOrder.timer);
+            }
+
+        };
+
+
+    </script>
     <script src="js/main2.js"></script>
 
 
@@ -1657,7 +1736,7 @@
                                                 style>
                                                 <div class="element-text text-style-subtitle text-align-center">
                                                     <p><span style="font-weight: 400;">Preț fără
-                                                            promoție:&nbsp;</span><s><span style="font-weight: 400;">480
+                                                            promoție:&nbsp;</span><s><span style="font-weight: 400;">284
                                                                 <x-currency>lei</x-currency>.
                                                             </span></s></p>
                                                 </div>
@@ -1682,7 +1761,7 @@
                                                 style>
                                                 <div class="element-text text-style-title text-align-center">
                                                     <p><span style="color: rgb(255, 0, 0);">
-                                                            <x-newprice>240</x-newprice>
+                                                            <x-newprice>142</x-newprice>
                                                             <x-currency>lei</x-currency>.
                                                         </span></p>
                                                 </div>
@@ -1830,7 +1909,7 @@
                                                 style>
                                                 <div class="element-text text-style-subtitle text-align-center">
                                                     <p><span style="font-weight: 400;">Preț fără
-                                                            promoție:&nbsp;</span><s><span style="font-weight: 400;">280
+                                                            promoție:&nbsp;</span><s><span style="font-weight: 400;">480
                                                                 <x-currency>lei</x-currency>.
                                                             </span></s></p>
                                                 </div>
@@ -1855,7 +1934,7 @@
                                                 style>
                                                 <div class="element-text text-style-title text-align-center">
                                                     <p><span style="color: rgb(255, 0, 0);">
-                                                            <x-newprice>140</x-newprice>
+                                                            <x-newprice>240</x-newprice>
                                                             <x-currency>lei</x-currency>.
                                                         </span></p>
                                                 </div>
@@ -2129,9 +2208,18 @@
                                             data-id="323124" data-e-id="text01" data-mod-id="0" data-components="[]">
                                             <div class="element-content element-content--static element-content--vertical"
                                                 style>
-                                                <p>Leggings - urile originale Flex arată spectaculos și luminos. Acestea sunt concepute pentru a elimina problema"coajei de portocala". Legăturile strâng și netezesc pielea corpului prin procese naturale, vă permit să ardeți kilograme în plus într-o perioadă scurtă de timp. În plus, leggings - urile arată elegant și interesant. Se potrivesc ideal pentru doamne cu orice tip de figură. <br> Efectul utilizării Flex: </p>
+                                                <p>Leggings - urile originale Flex arată spectaculos și luminos. Acestea
+                                                    sunt concepute pentru a elimina problema"coajei de portocala".
+                                                    Legăturile strâng și netezesc pielea corpului prin procese naturale,
+                                                    vă permit să ardeți kilograme în plus într-o perioadă scurtă de
+                                                    timp. În plus, leggings - urile arată elegant și interesant. Se
+                                                    potrivesc ideal pentru doamne cu orice tip de figură. </p>
                                                 <div class="element-text text-style-content text-align-left">
-                                                   
+                                                    <p><span
+                                                            style="color: rgb(255, 0, 0); font-weight: 700;">✔</span><span
+                                                            style="font-weight: 700;">&nbsp;</span>Efectul utilizării
+                                                        Flex
+                                                    </p>
                                                     <p><span
                                                             style="color: rgb(255, 0, 0); font-weight: 700;">✔</span><span
                                                             style="font-weight: 700;">&nbsp;</span>Piele mai fină și mai
@@ -3017,11 +3105,8 @@
 
 
                                                         <p class="conf-link doclinks">
-                                                            <a class="nav-link" href="/privacypolicy"
-                                                                target="_blanc">Privacy policy</a> <br>
-                                                                <a class="nav-link"  href="/general-conditions-of-sale"
-                                                                target="_blanc">General conditions of sale</a> <br>
-                                                                <a class="nav-link" href="/legal-warning" target="_blanc">Legal warning</a>
+                                                            <a class="nav-link" href="policy.html"
+                                                                target="_blanc">policy</a>
                                                         </p>
 
                                                         <!--       <p class="policy-link doclinks"> -->
@@ -3043,6 +3128,107 @@
             </div>
         </div>
     </footer>
+    <div class="modal-list">
+
+        <div class="m_modal m_form59741" data-is="modal" data-id="form59741" data-m-id="GRID" data-mod-id="4"
+            data-components="[&quot;background&quot;]" data-site-block-type="modal">
+            <div class="modal-data" data-contrast="light">
+                <div class="component-bg bg-color " data-type="color" data-component="background">
+                    <div class="overlay " data-opacity="1"></div>
+                </div>
+                <div class="scroller" data-overlay="true">
+                    <div class="modal-content width--s"><a class="close close-times"></a>
+                        <div class="layout-type-column gap-zero gap-am-zero">
+                            <div class="flexbe-row align-items-stretch justify-content-start only-row" data-item-id="1">
+                                <div class="flexbe-column gap-item only-column" data-cols="24" data-item-id="1">
+                                    <div class="content-zone content-zone--vertical content-zone--single content-zone--fill-color content-zone--rounded px-40 py-40 pm-40"
+                                        data-is="zone" data-id="708354" data-e-id="zone" data-mod-id="0"
+                                        data-zone-type="modal" data-action="none" data-components="[]"
+                                        data-contrast="dark">
+                                        <div class="content-zone__bg content-zone__bg--fill_color "></div>
+                                        <div class="elements-list elements-list--vertical elements-list--only"
+                                            data-element-align="start" data-element-justify="center" data-direction="y"
+                                            data-name="zone">
+                                            <div class="element-item is-first-child element-item--static element-item--vertical"
+                                                data-mr="0" data-ml="0" data-element-justify="center" data-is="element"
+                                                data-id="178413" data-e-id="text01" data-mod-id="4"
+                                                data-site-block-type="element" data-components="[]">
+                                                <div class="element-content element-content--static element-content--vertical"
+                                                    style>
+                                                    <div class="element-text text-style-subtitle text-align-inherit">
+                                                        <p><span style="font-weight: 700;">Обратный звонок</span></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="m_modal m_form61397" data-is="modal" data-id="form61397" data-m-id="GRID" data-mod-id="4"
+            data-components="[&quot;background&quot;]">
+            <div class="modal-data" data-contrast="light">
+                <div class="component-bg bg-color " data-type="color" data-component="background">
+                    <div class="overlay " data-opacity="1"></div>
+                </div>
+                <div class="scroller" data-overlay="true">
+                    <div class="modal-content width--s"><a class="close close-times"></a>
+                        <div class="layout-type-column gap-zero gap-am-zero">
+                            <div class="flexbe-row align-items-stretch justify-content-start only-row" data-item-id="1">
+                                <div class="flexbe-column gap-item only-column" data-cols="24" data-item-id="1">
+                                    <div class="content-zone content-zone--vertical content-zone--single content-zone--fill-color content-zone--rounded px-40 py-40 pm-40"
+                                        data-is="zone" data-id="360590" data-e-id="zone" data-mod-id="0"
+                                        data-zone-type="modal" data-action="none" data-components="[]"
+                                        data-contrast="dark">
+                                        <div class="content-zone__bg content-zone__bg--fill_color "></div>
+                                        <div class="elements-list elements-list--vertical elements-list--only"
+                                            data-element-align="start" data-element-justify="center" data-direction="y"
+                                            data-name="zone">
+                                            <div class="element-item is-first-child element-item--static element-item--vertical"
+                                                data-mr="0" data-ml="0" data-element-justify="center" data-is="element"
+                                                data-id="437391" data-e-id="text01" data-mod-id="4"
+                                                data-components="[]">
+                                                <div class="element-content element-content--static element-content--vertical"
+                                                    style>
+                                                    <div class="element-text text-style-subtitle text-align-inherit">
+                                                        <p>Заказать сумку</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="element-item element-item--static element-item--vertical"
+                                                data-mr="0" data-ml="0" data-element-justify="center" data-is="element"
+                                                data-id="942218" data-e-id="text01" data-mod-id="title_card_ru"
+                                                data-components="[]">
+                                                <div class="element-content element-content--static element-content--vertical"
+                                                    style>
+                                                    <div class="element-text text-style-subtitle text-align-inherit">
+                                                        <p><span style="font-weight: 400;">Сейчас&nbsp;</span><span
+                                                                style="color: rgb(240, 0, 0);">за <x-newprice>1390
+                                                                </x-newprice>
+                                                                <x-currency>lei</x-currency>.
+                                                            </span></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
 
     <link class="font-setup-import" rel="stylesheet" href="css/css_001.css">
     <style class="font-setup">
@@ -3107,7 +3293,11 @@
                         }
                     </style>
                     <form action method="post" name="ModalForm">
-                      
+                        <input name="csrf_token" type="hidden" value="0786efe44e598211b87a511be0056e89:1623166291">
+                        <select name="offer" class="form-control country_chang" style="display: none;">
+                            <option data-country-code="RU" selected="selected" value="24730">
+                                Россия </option>
+                        </select>
 
                         <input type="text" name="name" placeholder="Numele dvs." required>
                         <input type="tel" name="phone" placeholder="Numărul dvs. de telefon" required>
