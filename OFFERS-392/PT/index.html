@@ -5,97 +5,18 @@
 
     <script src="js/jquery.min_1.js"></script>
 
-    <script>
-        function set_validator_errors() {
-            orderValidator.errorTitle = 'Пожалуйста, исправьте следующие ошибки';
-
-            orderValidator.errorNameField = 'Имя';
-            orderValidator.errorNameMess = 'Укажите своё имя';
-
-            orderValidator.errorPhoneField = 'Телефон для связи';
-            orderValidator.errorPhoneMess = 'Введите правильный телефон';
-
-            orderValidator.errorAddress = 'Введите правильный адрес';
-            orderValidator.errorRequired = 'обязательное поле';
-            orderValidator.errorMaxLength = 'допустимо максимум {1} символа';
-            orderValidator.errorMinLength = 'допустимо минимум {1} символа';
-            orderValidator.errorEmailField = 'E-mail';
-            orderValidator.errorEmail = 'указан не корректный email';
-        }
-    </script>
-
-    <script>
-
-
-        window.app = {
-            timestamp: parseInt((new Date()).getTime() / 1000),
-            jq: jQuery,
-            formAction: window.location.href,
-            leadToken: '60bf8d5350dce3.14578810',
-            offers: { "24730": { "id": 24730, "country": { "code": "RU", "name": "\u0420\u043e\u0441\u0441\u0438\u044f" }, "price": "1390", "price2": "2950", "currency": { "code": "RUB", "name": "\u0440\u0443\u0431" }, "discount": "53%", "delivery_price": "", "link": "", "product_sku": "", "prepaid_info_html": "" } },
-            currentOffer: { "id": 24730, "country": { "code": "RU", "name": "\u0420\u043e\u0441\u0441\u0438\u044f" }, "price": "1390", "price2": "2950", "currency": { "code": "RUB", "name": "\u0440\u0443\u0431" }, "discount": "53%", "delivery_price": "", "link": "", "product_sku": "", "prepaid_info_html": "" },
-            allowedCountries: ["RU"],
-            _setOfferId: false,
-            streamHid: '',
-
-            setOffer: function (offerId) {
-                if (offerId == this._setOfferId) {
-                    return;
-                }
-                this._setOfferId = offerId;
-                if (offerId) {
-                    var offer = app.offers[offerId];
-                    var previousOffer = app.currentOffer;
-                    app.currentOffer = offer;
-                    var event = this.jq.Event("offerchange");
-                    event.previousOffer = previousOffer;
-                    event.currentOffer = app.currentOffer;
-                    this.jq(document).trigger(event);
-                    this.updatePage(offer);
-                } else {
-                    $('input[name=country]').val('');
-                }
-            },
-
-            updatePage: function (offer) {
-                $('x-newprice').html(offer.price);
-                $('x-oldprice').html(offer.price2);
-                $('x-currency').html(offer.currency.name);
-                $('input[name=offer], select[name=offer]').val(offer.id);
-                $('input[name=country]').val(offer.country.code);
-            },
-
-            blockForm: function () {
-                // Блокируем кнопки при отправке формы
-                $('input[type=submit]', $(this)).prop('disabled', true).attr('disabled', true);
-                $('button', $(this)).prop('disabled', true).attr('disabled', true);
-                app.incompleteOrder.lock = true;
-                clearTimeout(app.incompleteOrder.timer);
-            },
-
-            unblockForm: function () {
-                $('input[type=submit]', $(this)).prop('disabled', false).attr('disabled', false);
-                $('button[type=submit]', $(this)).prop('disabled', false).attr('disabled', false);
-                app.incompleteOrder.lock = false;
-                clearTimeout(app.incompleteOrder.timer);
-            }
-
-        };
-
-
-    </script>
     <script src="js/main2.js"></script>
 
 
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Распродажа женских сумок! Любая сумка за 1990 leiлей.</title>
+    <title>Liquidação das coleções anteriores!</title>
     <link rel="icon" href="img/favicon_4230812078.png" type="image/png">
     <meta name="viewport" content="width=device-width">
     <meta name="description"
-        content="Сезонная распродажа женских сумок из натуральной кожи. Любая сумка за 1990 leiлей. Итальянское качество. Гарантия 5 лет. Обмен и возврат в течении 60 дней.">
+        content="Сезонная распродажа женских сумок из натуральной кожи. Любая сумка за 1990 €лей. Итальянское качество. Гарантия 5 лет. Обмен и возврат в течении 60 дней.">
     <meta name="twitter:description"
-        content="Сезонная распродажа женских сумок из натуральной кожи. Любая сумка за 1990 leiлей. Итальянское качество. Гарантия 5 лет. Обмен и возврат в течении 60 дней.">
+        content="Сезонная распродажа женских сумок из натуральной кожи. Любая сумка за 1990 €лей. Итальянское качество. Гарантия 5 лет. Обмен и возврат в течении 60 дней.">
     <meta name="keywords" content="Женские сумки, сумки из натуральной кожи, купить женскую сумку">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Сезонная распродажа женских сумок из натуральной кожи.">
@@ -1242,7 +1163,7 @@
                                                         <use xmlns:xlink="http://www.w3.org/1999/xlink"
                                                             xlink:href="img/14083999.svg#icon" />
                                                     </svg></div>
-                                            </div><span class="btn-text">Comandă</span>
+                                            </div><span class="btn-text">Encomendar</span>
                                         </div>
                                     </a>
                                 </div>
@@ -1285,10 +1206,10 @@
                                             <div class="element-content element-content--static element-content--vertical"
                                                 style>
                                                 <div class="element-text text-style-title text-align-inherit">
-                                                    <p><span style="color: rgb(255, 0, 0);">OFERTĂ SPECIALĂ!
+                                                    <p><span style="color: rgb(255, 0, 0);">PROMOÇÃO
                                                         </span></p>
 
-                                                    <p>Lichidarea colecțiilor vechi!</p>
+                                                    <p>Liquidação das coleções anteriores!</p>
 
                                                 </div>
                                             </div>
@@ -1300,8 +1221,9 @@
                                             <div class="element-content element-content--static element-content--vertical"
                                                 style>
                                                 <div class="element-text text-style-subtitle text-align-inherit">
-                                                    <p><span style="font-weight: 400;">Reducere 50% la îmbrăcăminte,
-                                                            încălțăminte și accesorii! </span></p>
+                                                    <p><span style="font-weight: 400;">50% de desconto em roupas, sapatos
+                                                        e acessórios!
+                                                        </span></p>
                                                 </div>
                                             </div>
                                         </div>
@@ -1312,7 +1234,7 @@
                                             <div class="element-content element-content--static element-content--vertical"
                                                 style>
                                                 <div class="element-text text-style-content text-align-inherit">
-                                                    <p><em>Preț foarte favorabil!</em></p>
+                                                    <p><em>Preços muito atrativos!</em></p>
                                                 </div>
                                             </div>
                                         </div>
@@ -1330,7 +1252,7 @@
                                                                 data-component="button">
                                                                 <div
                                                                     class="btn-content btn-content-icon-text icon-on-left">
-                                                                    <span class="btn-text">ACCESAȚI CATALOGUL</span>
+                                                                    <span class="btn-text">IR AO CATÁLOGO</span>
                                                                 </div>
                                                             </a></div>
                                                     </div>
@@ -1382,7 +1304,7 @@
                                     <div class="element-content element-content--static element-content--vertical"
                                         style>
                                         <div class="element-text text-style-title text-align-inherit">
-                                            <p>Avantaje</p>
+                                            <p>Vantagens</p>
                                         </div>
                                     </div>
                                 </div>
@@ -1425,7 +1347,7 @@
                                                 <div class="element-content element-content--static element-content--vertical"
                                                     style>
                                                     <div class="element-text text-style-subtitle text-align-inherit">
-                                                        <p>Livrare rapidă!</p>
+                                                        <p>Entrega rápida!</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1437,8 +1359,7 @@
                                                     style>
                                                     <div class="element-text text-style-content text-align-inherit">
                                                         <p><span
-                                                                style="color: rgba(27, 27, 28, 0.7); background-color: transparent; text-align: inherit;">Livrare
-                                                                prin curier în termen de 1-2 zile!</span></p>
+                                                                style="color: rgba(27, 27, 28, 0.7); background-color: transparent; text-align: inherit;">Entrega por mensageiro dentro de 1-3 dias!</span></p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1475,7 +1396,7 @@
                                                 <div class="element-content element-content--static element-content--vertical"
                                                     style>
                                                     <div class="element-text text-style-subtitle text-align-inherit">
-                                                        <p>Plata la primirea comenzii.</p>
+                                                        <p>Pagamento após a receção da sua encomenda.</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1486,8 +1407,7 @@
                                                 <div class="element-content element-content--static element-content--vertical"
                                                     style>
                                                     <div class="element-text text-style-content text-align-inherit">
-                                                        <p><span style="color: rgba(27, 27, 28, 0.7);">Puteți achita în
-                                                                numerar la primire.</span></p>
+                                                        <p><span style="color: rgba(27, 27, 28, 0.7);">Pode pagar em efetivo após a receção.</span></p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1524,7 +1444,7 @@
                                                 <div class="element-content element-content--static element-content--vertical"
                                                     style>
                                                     <div class="element-text text-style-subtitle text-align-inherit">
-                                                        <p>Garanție</p>
+                                                        <p>Garantia</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1536,10 +1456,8 @@
                                                     style>
                                                     <div class="element-text text-style-content text-align-inherit">
                                                         <p><span
-                                                                style="color: rgba(27, 27, 28, 0.7); background-color: transparent; text-align: inherit;">Oferim
-                                                                clienților noștri cele mai bune prețuri pentru întreaga
-                                                                gamă de produse. Produsul este pre-verificat înainte de
-                                                                expediere.</span></p>
+                                                                style="color: rgba(27, 27, 28, 0.7); background-color: transparent; text-align: inherit;">Oferecemos aos nossos clientes os melhores preços para toda a gama de mercadorias. Todas as mercadorias são pré-verificadas antes do envio.
+                                                            </span></p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1577,7 +1495,7 @@
                                             <div class="element-content element-content--static element-content--vertical"
                                                 style>
                                                 <div class="element-text text-style-content text-align-center">
-                                                    <p>- CATALOG -</p>
+                                                    <p>- CATÁLOGO -</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -1588,12 +1506,10 @@
                                             <div class="element-content element-content--static element-content--vertical"
                                                 style>
                                                 <div class="element-text text-style-content text-align-center">
-                                                    <p><span style="font-weight: 700;">Lichidarea colecțiilor
-                                                            vechi.&nbsp;</span><span style="font-weight: 400;">Comandați
-                                                            acum și economisiți banii
+                                                    <p><span style="font-weight: 700;">Liquidação de coleções anteriores.&nbsp;</span><span style="font-weight: 400;">Encomende agora e poupe
                                                             &nbsp;</span><span
                                                             style="color: rgb(250, 0, 0); font-weight: 700;">
-                                                            <!-- 2 260 leiлей! -->
+                                                            <!-- 2 260 €лей! -->
                                                         </span></p>
                                                 </div>
                                             </div>
@@ -1676,7 +1592,7 @@
                                             <div class="element-content element-content--static element-content--vertical"
                                                 style>
                                                 <div class="element-text text-style-title text-align-center">
-                                                    <p>PANTALONI ALFA PENTRU BĂRBAȚI</p>
+                                                    <p>CALÇAS ALPHA PANTS</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -1686,44 +1602,31 @@
                                             data-id="999686" data-e-id="text01" data-mod-id="0" data-components="[]">
                                             <div class="element-content element-content--static element-content--vertical"
                                                 style>
-                                                <p>Pantalonii Alpha sunt proiectați de producătorii americani, care
-                                                    fiind foarte rezistenți și impermeabili, raman ușori și respirabili.
-                                                    Nu veți transpira în ei deloc. Țesătura se întinde bine și, prin
-                                                    urmare, pantalonii nu restricționează mișcarea, oferind un confort
-                                                    maxim.
-
-                                                </p>
+                                                <p>Alpha pants são concebidas por designers americanos para serem leves e respiráveis, apesar da sua durabilidade e impermeabilidade. não transpirará neles. O tecido estica-se bem e é por isso que as calças não limitam os seus movimentos, proporcionando o máximo conforto.
+                                                   <br> Ajuste clássico - concebido especificamente para homens
+                                                    </p>
                                                 <div class="element-text text-style-content text-align-left">
                                                     <p><span
                                                             style="color: rgb(255, 0, 0); font-weight: 700;">✔</span><span
-                                                            style="font-weight: 700;">&nbsp;</span>Cusătura
-                                                        clasică-creată special pentru bărbați</p>
+                                                            style="font-weight: 700;">&nbsp;</span>Tecido inovador
+                                                           
+                                                            </p>
                                                     <p><span
                                                             style="color: rgb(255, 0, 0); font-weight: 700;">✔</span><span
-                                                            style="font-weight: 700;">&nbsp;</span>Țesătura
-                                                        inovatoare<br></p>
-                                                    <p> <span style="font-weight: 700; color: rgb(255, 0, 0);">✔</span>
-                                                        Rezistenți la apă, resping murdăria <br></p>
+                                                            style="font-weight: 700;">&nbsp;</span>Impermeável e repelente de impurezas.
+                                                            <br></p>
+                                                    <p> <span style="font-weight: 700; color: rgb(255, 0, 0);">✔</span>Joelho ergonomicamente desenhado para conforto em todas as posições<br></p>
                                                     <p>
                                                         <span
-                                                            style="font-weight: 700; color: rgb(255, 0, 0);">✔&nbsp;</span>Rezistenți
-                                                        la tăieturi și ruperi<br>
+                                                            style="font-weight: 700; color: rgb(255, 0, 0);">✔&nbsp;</span>Resistente a cortes e rasgões<br>
                                                     </p>
                                                     <p>
                                                         <span
-                                                            style="color: rgb(255, 0, 0); font-weight: 700;">✔&nbsp;</span>Design
-                                                        Ergonomic al genunchiului pentru o mișcare confortabilă în orice
-                                                        poziție
+                                                            style="color: rgb(255, 0, 0); font-weight: 700;">✔&nbsp;</span>Inserção reforçada da virilha
                                                     </p>
                                                     <p>
                                                         <span
-                                                            style="color: rgb(255, 0, 0); font-weight: 700;">✔&nbsp;</span>Inserție
-                                                        armată în zona inghinală
-                                                    </p>
-                                                    <p>
-                                                        <span
-                                                            style="color: rgb(255, 0, 0); font-weight: 700;">✔&nbsp;</span>Design
-                                                        Culoare: Bej, Verde, Negru
+                                                            style="color: rgb(255, 0, 0); font-weight: 700;">✔&nbsp;</span>Cor: verde bege, preto
                                                     </p>
                                                 </div>
                                             </div>
@@ -1735,9 +1638,8 @@
                                             <div class="element-content element-content--static element-content--vertical"
                                                 style>
                                                 <div class="element-text text-style-subtitle text-align-center">
-                                                    <p><span style="font-weight: 400;">Preț fără
-                                                            promoție:&nbsp;</span><s><span style="font-weight: 400;">284
-                                                                <x-currency>lei</x-currency>.
+                                                    <p><span style="font-weight: 400;">Preço sem promoção:&nbsp;</span><s><span style="font-weight: 400;">98
+                                                                <x-currency>€</x-currency>
                                                             </span></s></p>
                                                 </div>
                                             </div>
@@ -1749,7 +1651,7 @@
                                             <div class="element-content element-content--static element-content--vertical"
                                                 style>
                                                 <div class="element-text text-style-title text-align-center">
-                                                    <p>Preț astăzi:</p>
+                                                    <p>Preço promoção hoje:</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -1761,8 +1663,8 @@
                                                 style>
                                                 <div class="element-text text-style-title text-align-center">
                                                     <p><span style="color: rgb(255, 0, 0);">
-                                                            <x-newprice>142</x-newprice>
-                                                            <x-currency>lei</x-currency>.
+                                                            <x-newprice>49</x-newprice>
+                                                            <x-currency>€</x-currency>
                                                         </span></p>
                                                 </div>
                                             </div>
@@ -1790,8 +1692,7 @@
                                                                                 <use xmlns:xlink="http://www.w3.org/1999/xlink"
                                                                                     xlink:href="img/14129981.svg#icon" />
                                                                             </svg></div>
-                                                                    </div><span class="btn-text">COMANDA CU OFERTA
-                                                                        SPECIALA</span>
+                                                                    </div><span class="btn-text">ENCOMENDAR COM PROMOÇÃO</span>
                                                                 </div>
                                                             </a></div>
                                                     </div>
@@ -1859,7 +1760,7 @@
                                             <div class="element-content element-content--static element-content--vertical"
                                                 style>
                                                 <div class="element-text text-style-title text-align-center">
-                                                    <p>CENTURA ALPHA BELT</p>
+                                                    <p>ALPHA BELT</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -1870,32 +1771,23 @@
                                             data-id="877758" data-e-id="text01" data-mod-id="0" data-components="[]">
                                             <div class="element-content element-content--static element-content--vertical"
                                                 style>
-                                                <p>Această centură combină o centură de nailon durabilă și o cataramă
-                                                    patentată de înaltă calitate. Catarama are o rezistență la tracțiune
-                                                    de 400 kg. Elementele grele pot fi ușor atârnate pe centură. Dacă
-                                                    sunteți în căutarea unei centuri durabile, de înaltă calitate, pe
-                                                    care vă puteți baza, atunci centura ALPHA este alegerea potrivită.
-                                                </p>
+                                                <p>Este cinto combina cinto de nylon durável e fivela patenteada de alta qualidade. A fivela tem uma resistência à tracção de 400 kg. Pode facilmente pendurar itens pesados no seu cinto. Se procura um cinto robusto e de alta qualidade em que possa confiar, então a ALPHA BELT é a escolha certa.</p>
                                                 <div class="element-text text-style-content text-align-inherit">
                                                     <p><span
                                                             style="color: rgb(255, 0, 0); font-weight: 700;">✔</span><span
-                                                            style="font-weight: 700;">&nbsp;</span>Lungime reglabilă
+                                                            style="font-weight: 700;">&nbsp;</span>Comprimento ajustável
                                                     </p>
                                                     <p><span
                                                             style="color: rgb(255, 0, 0); font-weight: 700;">✔</span><span
-                                                            style="font-weight: 700;">&nbsp;</span>Capacitate de a
-                                                        rezista la sarcini grele<br><span
+                                                            style="font-weight: 700;">&nbsp;</span>Capacidade de suportar cargas elevadas<br><span
                                                             style="font-weight: 700; color: rgb(255, 0, 0);">✔</span>
-                                                        Versatilitate (poate fi folosit ca un element de echipament în
-                                                        paintball, airsoft, etc.)
+                                                            Versatilidade (pode ser usado como elemento de equipamento em paintball, airsoft, etc.)
+
                                                         <br><span
-                                                            style="font-weight: 700; color: rgb(255, 0, 0);">✔&nbsp;</span>Multifuncțională
-                                                        (potrivit pentru fixarea pantalonilor și pentru distribuirea
-                                                        greutății echipamentului)<br><span
-                                                            style="color: rgb(255, 0, 0); font-weight: 700;">✔&nbsp;</span>Rezistenta<br>
+                                                            style="font-weight: 700; color: rgb(255, 0, 0);">✔&nbsp;</span>Versatilidade (adequado para fixação de calças e para distribuição do peso do equipamento)<br><span
+                                                            style="color: rgb(255, 0, 0); font-weight: 700;">✔&nbsp;</span>Robustez<br>
                                                         <span
-                                                            style="font-weight: 700; color: rgb(255, 0, 0);">✔&nbsp;</span>Rezistența
-                                                        la rupere și deformare
+                                                            style="font-weight: 700; color: rgb(255, 0, 0);">✔&nbsp;</span>Resistente ao rasgo e à deformação
 
                                                     </p>
                                                 </div>
@@ -1908,9 +1800,8 @@
                                             <div class="element-content element-content--static element-content--vertical"
                                                 style>
                                                 <div class="element-text text-style-subtitle text-align-center">
-                                                    <p><span style="font-weight: 400;">Preț fără
-                                                            promoție:&nbsp;</span><s><span style="font-weight: 400;">480
-                                                                <x-currency>lei</x-currency>.
+                                                    <p><span style="font-weight: 400;">Preço sem promoção:&nbsp;</span><s><span style="font-weight: 400;">58
+                                                                <x-currency>€</x-currency>
                                                             </span></s></p>
                                                 </div>
                                             </div>
@@ -1922,7 +1813,7 @@
                                             <div class="element-content element-content--static element-content--vertical"
                                                 style>
                                                 <div class="element-text text-style-title text-align-center">
-                                                    <p>Preț astăzi:</p>
+                                                    <p>Preço promoção hoje:</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -1934,8 +1825,8 @@
                                                 style>
                                                 <div class="element-text text-style-title text-align-center">
                                                     <p><span style="color: rgb(255, 0, 0);">
-                                                            <x-newprice>240</x-newprice>
-                                                            <x-currency>lei</x-currency>.
+                                                            <x-newprice>29</x-newprice>
+                                                            <x-currency>€</x-currency>
                                                         </span></p>
                                                 </div>
                                             </div>
@@ -1963,8 +1854,7 @@
                                                                                 <use xmlns:xlink="http://www.w3.org/1999/xlink"
                                                                                     xlink:href="img/14129981.svg#icon" />
                                                                             </svg></div>
-                                                                    </div><span class="btn-text">COMANDA CU OFERTA
-                                                                        SPECIALA</span>
+                                                                    </div><span class="btn-text">ENCOMENDAR COM PROMOÇÃO</span>
                                                                 </div>
                                                             </a></div>
                                                     </div>
@@ -2032,7 +1922,7 @@
                                             <div class="element-content element-content--static element-content--vertical"
                                                 style>
                                                 <div class="element-text text-style-title text-align-center">
-                                                    <p>LENJERIE MODELATOARE CERA SLENDER</p>
+                                                    <p>SAPATOS INDESTRUTÍVEIS COOLNEWTOOLS</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -2044,26 +1934,31 @@
                                             <div class="element-content element-content--static element-content--vertical"
                                                 style>
                                                 <p>
-                                                    Lenjeria modelatoare Cera Slender este complet diferită de modelele
-                                                    clasice de slăbire, deoarece combină mai multe tehnologii moderne de
-                                                    corectare a figurii. Se produce folosind o nanotehnologie specială
-                                                    care combină efectul micro-masaj al țesăturii și o formulă activă de
-                                                    modelare.
+                                                    Sapatilhas únicas que são feitas de materiais incrivelmente duráveis. Capazes de durar anos, mesmo em condições extremas. Revestimento impermeável, alta aderência, absorção de choques, protecção dos pés, protecção contra buracos de pregos e outros objetos cortantes. Asseguram facilmente o movimento em qualquer terreno.
                                                 </p>
                                                 <div class="element-text text-style-content text-align-left">
                                                     <p><span
                                                             style="color: rgb(255, 0, 0); font-weight: 700;">✔</span><span
-                                                            style="font-weight: 700;">&nbsp;</span>Reduce volumul
-                                                        corpului
+                                                            style="font-weight: 700;">&nbsp;</span>Fabricados com membrana PTX ventilada e repelente de água.
                                                     </p>
                                                     <p><span
                                                             style="color: rgb(255, 0, 0); font-weight: 700;">✔</span><span
-                                                            style="font-weight: 700;">&nbsp;</span>Are efect de
-                                                        eliminare a lichidelor
-                                                        combate neregularitățile pielii
+                                                            style="font-weight: 700;">&nbsp;</span>Adequados para actividades atléticas e trabalho diário
                                                         <br><span
                                                             style="font-weight: 700; color: rgb(255, 0, 0);">✔</span>
-                                                        Întărește și netezește pielea
+                                                            Sola antiderrapante
+                                                            <br><span
+                                                            style="font-weight: 700; color: rgb(255, 0, 0);">✔</span>
+                                                            À prova de água
+                                                            <br><span
+                                                            style="font-weight: 700; color: rgb(255, 0, 0);">✔</span>
+                                                            Palmilha com tratamento antibacteriano
+                                                            <br><span
+                                                            style="font-weight: 700; color: rgb(255, 0, 0);">✔</span>
+                                                            Absorvem os choques, aliviar os choques
+                                                            <br><span
+                                                            style="font-weight: 700; color: rgb(255, 0, 0);">✔</span>
+                                                            Protegem os pés de lesões graças à inserção de kevlar na ponta
                                                     </p>
                                                 </div>
                                             </div>
@@ -2075,9 +1970,8 @@
                                             <div class="element-content element-content--static element-content--vertical"
                                                 style>
                                                 <div class="element-text text-style-subtitle text-align-center">
-                                                    <p><span style="font-weight: 400;">Preț fără
-                                                            promoție:&nbsp;</span><s><span style="font-weight: 400;">340
-                                                                <x-currency>lei</x-currency>.
+                                                    <p><span style="font-weight: 400;">Preço sem promoção:&nbsp;</span><s><span style="font-weight: 400;">90
+                                                                <x-currency>€</x-currency>
                                                             </span></s></p>
                                                 </div>
                                             </div>
@@ -2089,7 +1983,7 @@
                                             <div class="element-content element-content--static element-content--vertical"
                                                 style>
                                                 <div class="element-text text-style-title text-align-center">
-                                                    <p>Preț astăzi:</p>
+                                                    <p>Preço promoção hoje:</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -2101,8 +1995,8 @@
                                                 style>
                                                 <div class="element-text text-style-title text-align-center">
                                                     <p><span style="color: rgb(255, 0, 0);">
-                                                            <x-newprice>170</x-newprice>
-                                                            <x-currency>lei</x-currency>.
+                                                            <x-newprice>45</x-newprice>
+                                                            <x-currency>€</x-currency>
                                                         </span></p>
                                                 </div>
                                             </div>
@@ -2130,8 +2024,7 @@
                                                                                 <use xmlns:xlink="http://www.w3.org/1999/xlink"
                                                                                     xlink:href="img/14129981.svg#icon" />
                                                                             </svg></div>
-                                                                    </div><span class="btn-text">COMANDA CU OFERTA
-                                                                        SPECIALA</span>
+                                                                    </div><span class="btn-text">ENCOMENDAR COM PROMOÇÃO</span>
                                                                 </div>
                                                             </a></div>
                                                     </div>
@@ -2199,7 +2092,7 @@
                                             <div class="element-content element-content--static element-content--vertical"
                                                 style>
                                                 <div class="element-text text-style-title text-align-center">
-                                                    <p>LEGGINGS FLEX</p>
+                                                    <p>SAPATILHAS VENOM SNEAKER</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -2208,33 +2101,19 @@
                                             data-id="323124" data-e-id="text01" data-mod-id="0" data-components="[]">
                                             <div class="element-content element-content--static element-content--vertical"
                                                 style>
-                                                <p>Leggings - urile originale Flex arată spectaculos și luminos. Acestea
-                                                    sunt concepute pentru a elimina problema"coajei de portocala".
-                                                    Legăturile strâng și netezesc pielea corpului prin procese naturale,
-                                                    vă permit să ardeți kilograme în plus într-o perioadă scurtă de
-                                                    timp. În plus, leggings - urile arată elegant și interesant. Se
-                                                    potrivesc ideal pentru doamne cu orice tip de figură. </p>
+                                                <p>As sapatilhas VENOM Sneakers combinam um conforto incrível, design moderno, materiais de qualidade e durabilidade impressionante. Perfeitas para o seu treino, mas também para o seu passeio na cidade ou no parque.</p>
                                                 <div class="element-text text-style-content text-align-left">
+                                                   
                                                     <p><span
                                                             style="color: rgb(255, 0, 0); font-weight: 700;">✔</span><span
-                                                            style="font-weight: 700;">&nbsp;</span>Efectul utilizării
-                                                        Flex
-                                                    </p>
-                                                    <p><span
-                                                            style="color: rgb(255, 0, 0); font-weight: 700;">✔</span><span
-                                                            style="font-weight: 700;">&nbsp;</span>Piele mai fină și mai
-                                                        catifelată<br><span
+                                                            style="font-weight: 700;">&nbsp;</span>Elegante combinação de cor preta clássica com acentos vermelhos brilhantes
+                                                            <br><span
                                                             style="font-weight: 700; color: rgb(255, 0, 0);">✔</span>
-                                                        Resorbția imperfecțiunilor și a nodurilor
-                                                        Îmbunătățirea culorii pielii
-                                                        <br><span
-                                                            style="font-weight: 700; color: rgb(255, 0, 0);">✔&nbsp;</span>Crearea
-                                                        siluetei perfecte<br><span
-                                                            style="color: rgb(255, 0, 0); font-weight: 700;">✔&nbsp;</span>Reducerea
-                                                        umflaturilor<br>
-                                                        <span
-                                                            style="color: rgb(255, 0, 0); font-weight: 700;">✔&nbsp;</span>Protecția
-                                                        venelor contra varice
+                                                            Besign desportivo nas solas para um aspecto dinâmico
+                                                            <br><span
+                                                            style="font-weight: 700; color: rgb(255, 0, 0);">✔</span>
+                                                            Elementos decorativos originais que enfatizam o estilo desportivo
+                                                       
                                                     </p>
                                                 </div>
                                             </div>
@@ -2246,9 +2125,8 @@
                                             <div class="element-content element-content--static element-content--vertical"
                                                 style>
                                                 <div class="element-text text-style-subtitle text-align-center">
-                                                    <p><span style="font-weight: 400;">Preț fără
-                                                            promoție:&nbsp;</span><s><span style="font-weight: 400;">340
-                                                                <x-currency>lei</x-currency>.
+                                                    <p><span style="font-weight: 400;">Preço sem promoção:&nbsp;</span><s><span style="font-weight: 400;">90
+                                                                <x-currency>€</x-currency>
                                                             </span></s></p>
                                                 </div>
                                             </div>
@@ -2260,7 +2138,7 @@
                                             <div class="element-content element-content--static element-content--vertical"
                                                 style>
                                                 <div class="element-text text-style-title text-align-center">
-                                                    <p>Preț astăzi:</p>
+                                                    <p>Preço promoção hoje:</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -2272,8 +2150,8 @@
                                                 style>
                                                 <div class="element-text text-style-title text-align-center">
                                                     <p><span style="color: rgb(255, 0, 0);">
-                                                            <x-newprice>170</x-newprice>
-                                                            <x-currency>lei</x-currency>.
+                                                            <x-newprice>45</x-newprice>
+                                                            <x-currency>€</x-currency>
                                                         </span></p>
                                                 </div>
                                             </div>
@@ -2301,8 +2179,7 @@
                                                                                 <use xmlns:xlink="http://www.w3.org/1999/xlink"
                                                                                     xlink:href="img/14129981.svg#icon" />
                                                                             </svg></div>
-                                                                    </div><span class="btn-text">COMANDA CU OFERTA
-                                                                        SPECIALA</span>
+                                                                    </div><span class="btn-text">ENCOMENDAR COM PROMOÇÃO</span>
                                                                 </div>
                                                             </a></div>
                                                     </div>
@@ -2370,7 +2247,7 @@
                                             <div class="element-content element-content--static element-content--vertical"
                                                 style>
                                                 <div class="element-text text-style-title text-align-center">
-                                                    <p>SUTIEN SPORT GENIE BRA</p>
+                                                    <p>MOTION SNEAKERS</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -2381,37 +2258,18 @@
                                             <div class="element-content element-content--static element-content--vertical"
                                                 style>
                                                 <p>
-                                                    Cel mai înalt grad de amortizare a mișcărilor oscilante ale
-                                                    pieptului în timpul sportului, mărește confortul și eficacitatea
-                                                    antrenamentului!
-                                                    <br>
-                                                    Genie Bra este gândit până la cel mai mic detaliu:
+                                                    As sapatilhas Motion Sneakers combinam um conforto incrível, design de moda, materiais de alta qualidade e durabilidade impressionante. São perfeitas para actividades atléticas, bem como para passeios pela cidade ou no parque.
                                                 </p>
                                                 <div class="element-text text-style-content text-align-left">
                                                     <p><span
                                                             style="color: rgb(255, 0, 0); font-weight: 700;">✔</span><span
-                                                            style="font-weight: 700;">&nbsp;</span>Cupa închisă cu cadre
-                                                        ascunse separă și susține pieptul.
+                                                            style="font-weight: 700;">&nbsp;</span>Desenho com estilo
                                                     </p>
                                                     <p><span
                                                             style="color: rgb(255, 0, 0); font-weight: 700;">✔</span><span
-                                                            style="font-weight: 700;">&nbsp;</span>În interior este
-                                                        netedă din cauciuc spumant moale, respirabil.<br><span
+                                                            style="font-weight: 700;">&nbsp;</span>- repelentes à lama e à água<br><span
                                                             style="font-weight: 700; color: rgb(255, 0, 0);">✔</span>
-                                                        Tăierea oblică a cupei centrează pieptul, ceea ce creează o
-                                                        siluetă frumoasă.<br><span
-                                                            style="font-weight: 700; color: rgb(255, 0, 0);">✔&nbsp;</span>Bretelele
-                                                        oferă suport fiabil.<br><span
-                                                            style="color: rgb(255, 0, 0); font-weight: 700;">✔&nbsp;</span>Datorită
-                                                        curelelor extinse, încărcătura este distribuită uniform pe
-                                                        umeri.
-
-                                                        <br><span
-                                                            style="font-weight: 700; color: rgb(255, 0, 0);">✔&nbsp;</span>Este
-                                                        potrivit pentru toate tipurile de activitate fizică: pentru
-                                                        sport,fitness etc.<br><span
-                                                            style="font-weight: 700; color: rgb(255, 0, 0);">✔&nbsp;</span>Materialul
-                                                        sutienului are proprietăți respirabile și nu transpirați în el.
+                                                            Conforto excepcional
                                                     </p>
                                                 </div>
                                             </div>
@@ -2423,9 +2281,8 @@
                                             <div class="element-content element-content--static element-content--vertical"
                                                 style>
                                                 <div class="element-text text-style-subtitle text-align-center">
-                                                    <p><span style="font-weight: 400;">Preț fără
-                                                            promoție:&nbsp;</span><s><span style="font-weight: 400;">340
-                                                                <x-currency>lei</x-currency>.
+                                                    <p><span style="font-weight: 400;">Preço sem promoção:&nbsp;</span><s><span style="font-weight: 400;">90
+                                                                <x-currency>€</x-currency>
                                                             </span></s></p>
                                                 </div>
                                             </div>
@@ -2437,7 +2294,7 @@
                                             <div class="element-content element-content--static element-content--vertical"
                                                 style>
                                                 <div class="element-text text-style-title text-align-center">
-                                                    <p>Preț astăzi:</p>
+                                                    <p>Preço promoção hoje:</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -2449,8 +2306,8 @@
                                                 style>
                                                 <div class="element-text text-style-title text-align-center">
                                                     <p><span style="color: rgb(255, 0, 0);">
-                                                            <x-newprice>170</x-newprice>
-                                                            <x-currency>lei</x-currency>.
+                                                            <x-newprice>45</x-newprice>
+                                                            <x-currency>€</x-currency>
                                                         </span></p>
                                                 </div>
                                             </div>
@@ -2478,8 +2335,7 @@
                                                                                 <use xmlns:xlink="http://www.w3.org/1999/xlink"
                                                                                     xlink:href="img/14129981.svg#icon" />
                                                                             </svg></div>
-                                                                    </div><span class="btn-text">COMANDA CU OFERTA
-                                                                        SPECIALA</span>
+                                                                    </div><span class="btn-text">ENCOMENDAR COM PROMOÇÃO</span>
                                                                 </div>
                                                             </a></div>
                                                     </div>
@@ -2495,6 +2351,647 @@
                 </div>
             </div>
         </div>
+        <div class="b_block b_662759 was-view" data-is="block" data-id="662759" data-b-id="BUNDLE" data-mod-id="GRID9"
+        data-components="[&quot;background&quot;]">
+        <div class="container-fluid  indent" data-contrast="dark">
+            <div class="component-bg bg-color " data-type="color" data-component="background">
+                <div class="overlay " data-opacity="1"></div>
+            </div>
+            <div class="main-area">
+                <div class="main-area_spacer main-area_spacer--top"></div>
+                <div class="layout-type-column gap-zero gap-am-zero grid-zone container lg-container" data-is="zone"
+                    data-id="584352" data-e-id="zone_grid" data-mod-id="0" data-components="[]">
+                    <div class="flexbe-row align-items-stretch justify-content-start only-row" data-item-id="1">
+                        <div class="flexbe-column gap-item first-column" data-cols="12" data-item-id="1">
+                            <div class="content-zone content-zone--vertical content-zone--single content-zone--fill-color px-0 py-0 pm-0"
+                                data-is="zone" data-id="600153" data-e-id="zone" data-mod-id="0"
+                                data-zone-type="column" data-action="none" data-components="[]"
+                                data-contrast="dark">
+                                <div class="content-zone__bg content-zone__bg--fill_color "></div>
+                                <!-- Swiper -->
+                                <div class="flexslider">
+                                    <ul class="slides">
+                                        <li data-thumb="img/6.jpg">
+                                            <img src="img/6.jpg">
+                                        </li>
+                                        <li data-thumb="img/6_2.jpg">
+                                            <img src="img/6_2.jpg">
+                                        </li>
+                                        <li data-thumb="img/6_3.jpg">
+                                            <img src="img/6_3.jpg">
+                                        </li>
+                                        <li data-thumb="img/6_4.jpg">
+                                            <img src="img/6_4.jpg">
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- Swiper /-->
+                            </div>
+                        </div>
+                        <div class="flexbe-column gap-item last-column" data-cols="12" data-item-id="2">
+                            <div class="content-zone content-zone--vertical content-zone--single content-zone--fill-color px-20 py-20 pm-20"
+                                data-is="zone" data-id="974081" data-e-id="zone" data-mod-id="0"
+                                data-zone-type="column" data-action="none" data-components="[]"
+                                data-contrast="dark">
+                                <div class="content-zone__bg content-zone__bg--fill_color "></div>
+                                <div class="elements-list elements-list--vertical elements-list--only elements-list--allowFill"
+                                    data-element-align="center" data-element-justify="start" data-direction="y"
+                                    data-name="zone">
+                                    <div class="element-item is-first-child element-item--static element-item--vertical"
+                                        data-mr="0" data-ml="0" data-element-justify="center" data-is="element"
+                                        data-id="936516" data-e-id="text01" data-mod-id="1" data-components="[]">
+                                        <div class="element-content element-content--static element-content--vertical"
+                                            style>
+                                            <div class="element-text text-style-title text-align-center">
+                                                <p>JEGGINGS PUSH-UP</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="element-item element-item--static element-item--vertical"
+                                        data-mr="0" data-ml="1" data-element-justify="start" data-is="element"
+                                        data-id="591918" data-e-id="text01" data-mod-id="0" data-components="[]">
+                                        <div class="element-content element-content--static element-content--vertical"
+                                            style>
+                                            <p>
+                                                Jeggings com moldagem e elevado efeito de subida e push-up feitos de ganga elástica com elevado teor de algodão. Estes jeggings são macios, flexíveis e confortáveis - proporcionando um ajuste perfeito e dando uma sensação de conforto e leveza durante todo o dia.
+
+                                            </p>
+                                            <div class="element-text text-style-content text-align-left">
+                                                <p><span
+                                                        style="color: rgb(255, 0, 0); font-weight: 700;">✔</span><span
+                                                        style="font-weight: 700;">&nbsp;</span>Efeito de moldagem 
+                                                </p>
+                                                <p><span
+                                                        style="color: rgb(255, 0, 0); font-weight: 700;">✔</span><span
+                                                        style="font-weight: 700;">&nbsp;</span>Cinturão elástico largo<br><span
+                                                        style="font-weight: 700; color: rgb(255, 0, 0);">✔</span>
+                                                        Retenção de cor mesmo depois de muitas lavagens
+
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="element-item element-item--static element-item--vertical"
+                                        data-mr="0" data-ml="0" data-element-justify="center" data-is="element"
+                                        data-id="586092" data-e-id="text01" data-mod-id="title_card_ru"
+                                        data-components="[]">
+                                        <div class="element-content element-content--static element-content--vertical"
+                                            style>
+                                            <div class="element-text text-style-subtitle text-align-center">
+                                                <p><span style="font-weight: 400;">Preço sem promoção:&nbsp;</span><s><span style="font-weight: 400;">90
+                                                            <x-currency>€</x-currency>
+                                                        </span></s></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="element-item element-item--static element-item--vertical"
+                                        data-mr="0" data-ml="0" data-element-justify="center" data-is="element"
+                                        data-id="526099" data-e-id="text01" data-mod-id="title_ru"
+                                        data-components="[]">
+                                        <div class="element-content element-content--static element-content--vertical"
+                                            style>
+                                            <div class="element-text text-style-title text-align-center">
+                                                <p>Preço promoção hoje:</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="element-item element-item--static element-item--vertical"
+                                        data-mr="0" data-ml="0" data-element-justify="center" data-is="element"
+                                        data-id="385854" data-e-id="text01" data-mod-id="title_ru"
+                                        data-components="[]">
+                                        <div class="element-content element-content--static element-content--vertical"
+                                            style>
+                                            <div class="element-text text-style-title text-align-center">
+                                                <p><span style="color: rgb(255, 0, 0);">
+                                                        <x-newprice>45</x-newprice>
+                                                        <x-currency>€</x-currency>
+                                                    </span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="element-item is-last-child element-item--static element-item--vertical"
+                                        data-mr="0" data-ml="0" data-element-justify="center" data-is="element"
+                                        data-id="226252" data-e-id="button01" data-mod-id="2"
+                                        data-components="[&quot;button&quot;]">
+                                        <div class="element-content element-content--static element-content--vertical"
+                                            style>
+                                            <div class="buttons-holder text-position-disabled single no-price">
+                                                <div class="button-wrapper button-1 " data-item-id="1">
+                                                    <div class="button-container"><a
+                                                            class="component-button  text--auto effect--zoom line_size--small weight--bold size--large filled squared"
+                                                            data-action="modal" data-modal-id="form61397"
+                                                            data-component="button">
+                                                            <div
+                                                                class="btn-content btn-content-icon-text icon-on-left">
+                                                                <div class="component-icon component-ico size--custom style--none color--contrast border--small shape--none scale--contain"
+                                                                    style="--iconSize:  30px;"
+                                                                    data-component="icon">
+                                                                    <div class="icon-wrap"><svg
+                                                                            class="icon vector-icon"
+                                                                            xmlns="http://www.w3.org/2000/svg">
+                                                                            <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                                                xlink:href="img/14129981.svg#icon" />
+                                                                        </svg></div>
+                                                                </div><span class="btn-text">ENCOMENDAR COM PROMOÇÃO</span>
+                                                            </div>
+                                                        </a></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-area_spacer main-area_spacer--bottom"></div>
+            </div>
+        </div>
+    </div>
+    <div class="b_block b_662759 was-view" data-is="block" data-id="662759" data-b-id="BUNDLE" data-mod-id="GRID9"
+    data-components="[&quot;background&quot;]">
+    <div class="container-fluid  indent" data-contrast="dark">
+        <div class="component-bg bg-color " data-type="color" data-component="background">
+            <div class="overlay " data-opacity="1"></div>
+        </div>
+        <div class="main-area">
+            <div class="main-area_spacer main-area_spacer--top"></div>
+            <div class="layout-type-column gap-zero gap-am-zero grid-zone container lg-container" data-is="zone"
+                data-id="584352" data-e-id="zone_grid" data-mod-id="0" data-components="[]">
+                <div class="flexbe-row align-items-stretch justify-content-start only-row" data-item-id="1">
+                    <div class="flexbe-column gap-item first-column" data-cols="12" data-item-id="1">
+                        <div class="content-zone content-zone--vertical content-zone--single content-zone--fill-color px-0 py-0 pm-0"
+                            data-is="zone" data-id="600153" data-e-id="zone" data-mod-id="0"
+                            data-zone-type="column" data-action="none" data-components="[]"
+                            data-contrast="dark">
+                            <div class="content-zone__bg content-zone__bg--fill_color "></div>
+                            <!-- Swiper -->
+                            <div class="flexslider">
+                                <ul class="slides">
+                                    <li data-thumb="img/7.jpg">
+                                        <img src="img/7.jpg">
+                                    </li>
+                                    <li data-thumb="img/7_2.jpg">
+                                        <img src="img/7_2.jpg">
+                                    </li>
+                                    <li data-thumb="img/7_3.jpg">
+                                        <img src="img/7_3.jpg">
+                                    </li>
+                                    <li data-thumb="img/7_4.jpg">
+                                        <img src="img/7_4.jpg">
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- Swiper /-->
+                        </div>
+                    </div>
+                    <div class="flexbe-column gap-item last-column" data-cols="12" data-item-id="2">
+                        <div class="content-zone content-zone--vertical content-zone--single content-zone--fill-color px-20 py-20 pm-20"
+                            data-is="zone" data-id="974081" data-e-id="zone" data-mod-id="0"
+                            data-zone-type="column" data-action="none" data-components="[]"
+                            data-contrast="dark">
+                            <div class="content-zone__bg content-zone__bg--fill_color "></div>
+                            <div class="elements-list elements-list--vertical elements-list--only elements-list--allowFill"
+                                data-element-align="center" data-element-justify="start" data-direction="y"
+                                data-name="zone">
+                                <div class="element-item is-first-child element-item--static element-item--vertical"
+                                    data-mr="0" data-ml="0" data-element-justify="center" data-is="element"
+                                    data-id="936516" data-e-id="text01" data-mod-id="1" data-components="[]">
+                                    <div class="element-content element-content--static element-content--vertical"
+                                        style>
+                                        <div class="element-text text-style-title text-align-center">
+                                            <p>ANTI BAD SMELL SOCKS</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="element-item element-item--static element-item--vertical"
+                                    data-mr="0" data-ml="1" data-element-justify="start" data-is="element"
+                                    data-id="591918" data-e-id="text01" data-mod-id="0" data-components="[]">
+                                    <div class="element-content element-content--static element-content--vertical"
+                                        style>
+                                        <p>
+                                            A diferença dessas meias  é o seu tratamento especial e impregnação higienizada antifúngica Sanitized, que não só protege os pés de doenças fúngicas, mas também elimina o cheiro desagradável do suor e proporciona um maior nível de conforto (semelhante ao desodorizante). mantém a sua actividade antimicrobiana mesmo depois de muitas lavagens.
+                                        </p>
+                                        <div class="element-text text-style-content text-align-left">
+                                            <p><span
+                                                    style="color: rgb(255, 0, 0); font-weight: 700;">✔</span><span
+                                                    style="font-weight: 700;">&nbsp;</span>Forma de painel anatómico
+                                            </p>
+                                            <p><span
+                                                    style="color: rgb(255, 0, 0); font-weight: 700;">✔</span><span
+                                                    style="font-weight: 700;">&nbsp;</span>Respirável<br><span
+                                                    style="font-weight: 700; color: rgb(255, 0, 0);">✔</span>
+                                                    Tratamento antifúngico<br><span
+                                                    style="font-weight: 700; color: rgb(255, 0, 0);">✔&nbsp;</span>Elevada resistência à abrasão
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="element-item element-item--static element-item--vertical"
+                                    data-mr="0" data-ml="0" data-element-justify="center" data-is="element"
+                                    data-id="586092" data-e-id="text01" data-mod-id="title_card_ru"
+                                    data-components="[]">
+                                    <div class="element-content element-content--static element-content--vertical"
+                                        style>
+                                        <div class="element-text text-style-subtitle text-align-center">
+                                            <p><span style="font-weight: 400;">Preço sem promoção:&nbsp;</span><s><span style="font-weight: 400;">30
+                                                        <x-currency>€</x-currency>
+                                                    </span></s></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="element-item element-item--static element-item--vertical"
+                                    data-mr="0" data-ml="0" data-element-justify="center" data-is="element"
+                                    data-id="526099" data-e-id="text01" data-mod-id="title_ru"
+                                    data-components="[]">
+                                    <div class="element-content element-content--static element-content--vertical"
+                                        style>
+                                        <div class="element-text text-style-title text-align-center">
+                                            <p>Preço promoção hoje:</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="element-item element-item--static element-item--vertical"
+                                    data-mr="0" data-ml="0" data-element-justify="center" data-is="element"
+                                    data-id="385854" data-e-id="text01" data-mod-id="title_ru"
+                                    data-components="[]">
+                                    <div class="element-content element-content--static element-content--vertical"
+                                        style>
+                                        <div class="element-text text-style-title text-align-center">
+                                            <p><span style="color: rgb(255, 0, 0);">
+                                                    <x-newprice>15</x-newprice>
+                                                    <x-currency>€</x-currency>
+                                                </span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="element-item is-last-child element-item--static element-item--vertical"
+                                    data-mr="0" data-ml="0" data-element-justify="center" data-is="element"
+                                    data-id="226252" data-e-id="button01" data-mod-id="2"
+                                    data-components="[&quot;button&quot;]">
+                                    <div class="element-content element-content--static element-content--vertical"
+                                        style>
+                                        <div class="buttons-holder text-position-disabled single no-price">
+                                            <div class="button-wrapper button-1 " data-item-id="1">
+                                                <div class="button-container"><a
+                                                        class="component-button  text--auto effect--zoom line_size--small weight--bold size--large filled squared"
+                                                        data-action="modal" data-modal-id="form61397"
+                                                        data-component="button">
+                                                        <div
+                                                            class="btn-content btn-content-icon-text icon-on-left">
+                                                            <div class="component-icon component-ico size--custom style--none color--contrast border--small shape--none scale--contain"
+                                                                style="--iconSize:  30px;"
+                                                                data-component="icon">
+                                                                <div class="icon-wrap"><svg
+                                                                        class="icon vector-icon"
+                                                                        xmlns="http://www.w3.org/2000/svg">
+                                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                                            xlink:href="img/14129981.svg#icon" />
+                                                                    </svg></div>
+                                                            </div><span class="btn-text">ENCOMENDAR COM PROMOÇÃO</span>
+                                                        </div>
+                                                    </a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-area_spacer main-area_spacer--bottom"></div>
+        </div>
+    </div>
+</div>
+<div class="b_block b_662759 was-view" data-is="block" data-id="662759" data-b-id="BUNDLE" data-mod-id="GRID9"
+data-components="[&quot;background&quot;]">
+<div class="container-fluid  indent" data-contrast="dark">
+    <div class="component-bg bg-color " data-type="color" data-component="background">
+        <div class="overlay " data-opacity="1"></div>
+    </div>
+    <div class="main-area">
+        <div class="main-area_spacer main-area_spacer--top"></div>
+        <div class="layout-type-column gap-zero gap-am-zero grid-zone container lg-container" data-is="zone"
+            data-id="584352" data-e-id="zone_grid" data-mod-id="0" data-components="[]">
+            <div class="flexbe-row align-items-stretch justify-content-start only-row" data-item-id="1">
+                <div class="flexbe-column gap-item first-column" data-cols="12" data-item-id="1">
+                    <div class="content-zone content-zone--vertical content-zone--single content-zone--fill-color px-0 py-0 pm-0"
+                        data-is="zone" data-id="600153" data-e-id="zone" data-mod-id="0"
+                        data-zone-type="column" data-action="none" data-components="[]"
+                        data-contrast="dark">
+                        <div class="content-zone__bg content-zone__bg--fill_color "></div>
+                        <!-- Swiper -->
+                        <div class="flexslider">
+                            <ul class="slides">
+                                <li data-thumb="img/8.jpg">
+                                    <img src="img/8.jpg">
+                                </li>
+                                <li data-thumb="img/8_2.jpg">
+                                    <img src="img/8_2.jpg">
+                                </li>
+                                <li data-thumb="img/8_3.jpg">
+                                    <img src="img/8_3.jpg">
+                                </li>
+                                <li data-thumb="img/8_4.jpg">
+                                    <img src="img/8_4.jpg">
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Swiper /-->
+                    </div>
+                </div>
+                <div class="flexbe-column gap-item last-column" data-cols="12" data-item-id="2">
+                    <div class="content-zone content-zone--vertical content-zone--single content-zone--fill-color px-20 py-20 pm-20"
+                        data-is="zone" data-id="974081" data-e-id="zone" data-mod-id="0"
+                        data-zone-type="column" data-action="none" data-components="[]"
+                        data-contrast="dark">
+                        <div class="content-zone__bg content-zone__bg--fill_color "></div>
+                        <div class="elements-list elements-list--vertical elements-list--only elements-list--allowFill"
+                            data-element-align="center" data-element-justify="start" data-direction="y"
+                            data-name="zone">
+                            <div class="element-item is-first-child element-item--static element-item--vertical"
+                                data-mr="0" data-ml="0" data-element-justify="center" data-is="element"
+                                data-id="936516" data-e-id="text01" data-mod-id="1" data-components="[]">
+                                <div class="element-content element-content--static element-content--vertical"
+                                    style>
+                                    <div class="element-text text-style-title text-align-center">
+                                        <p>SOUTIEN INVISÍVEL FLY BRA</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="element-item element-item--static element-item--vertical"
+                                data-mr="0" data-ml="1" data-element-justify="start" data-is="element"
+                                data-id="591918" data-e-id="text01" data-mod-id="0" data-components="[]">
+                                <div class="element-content element-content--static element-content--vertical"
+                                    style>
+                                    <p>
+                                        O soutien invisível Fly Bra é uma invenção revolucionária concebida para tornar os seus sonhos em realidade! Macio, natural, reutilizável, fácil de lavar, sem alças e com o dorso aberto!
+                                    </p>
+                                    <div class="element-text text-style-content text-align-left">
+                                        <p><span
+                                                style="color: rgb(255, 0, 0); font-weight: 700;">✔</span><span
+                                                style="font-weight: 700;">&nbsp;</span>Copos macios e maleáveis
+                                        </p>
+                                        <p><span
+                                                style="color: rgb(255, 0, 0); font-weight: 700;">✔</span><span
+                                                style="font-weight: 700;">&nbsp;</span>Área perfurada para permitir o acesso do ar à pele<br><span
+                                                style="font-weight: 700; color: rgb(255, 0, 0);">✔</span>
+                                                O efeito push-up dá um ou dois tamanhos a aumentar<br><span
+                                                style="font-weight: 700; color: rgb(255, 0, 0);">✔&nbsp;</span>Fecho de cordões para ajudar a moldar o busto e a clivagem<br><span
+                                                style="color: rgb(255, 0, 0); font-weight: 700;">✔&nbsp;</span>Melhora o contorno do busto<br><span
+                                                style="font-weight: 700; color: rgb(255, 0, 0);">✔&nbsp;</span>Gel de silicone hipoalergénico<br><span
+                                                style="font-weight: 700; color: rgb(255, 0, 0);">✔&nbsp;</span>Muito leve e não aperta e não restringe o movimento do corpo
+                                                <br><span
+                                                style="font-weight: 700; color: rgb(255, 0, 0);">✔&nbsp;</span>Invisível, mesmo sob os trajes mais reveladores
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="element-item element-item--static element-item--vertical"
+                                data-mr="0" data-ml="0" data-element-justify="center" data-is="element"
+                                data-id="586092" data-e-id="text01" data-mod-id="title_card_ru"
+                                data-components="[]">
+                                <div class="element-content element-content--static element-content--vertical"
+                                    style>
+                                    <div class="element-text text-style-subtitle text-align-center">
+                                        <p><span style="font-weight: 400;">Preço sem promoção:&nbsp;</span><s><span style="font-weight: 400;">70
+                                                    <x-currency>€</x-currency>
+                                                </span></s></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="element-item element-item--static element-item--vertical"
+                                data-mr="0" data-ml="0" data-element-justify="center" data-is="element"
+                                data-id="526099" data-e-id="text01" data-mod-id="title_ru"
+                                data-components="[]">
+                                <div class="element-content element-content--static element-content--vertical"
+                                    style>
+                                    <div class="element-text text-style-title text-align-center">
+                                        <p>Preço promoção hoje:</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="element-item element-item--static element-item--vertical"
+                                data-mr="0" data-ml="0" data-element-justify="center" data-is="element"
+                                data-id="385854" data-e-id="text01" data-mod-id="title_ru"
+                                data-components="[]">
+                                <div class="element-content element-content--static element-content--vertical"
+                                    style>
+                                    <div class="element-text text-style-title text-align-center">
+                                        <p><span style="color: rgb(255, 0, 0);">
+                                                <x-newprice>35</x-newprice>
+                                                <x-currency>€</x-currency>
+                                            </span></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="element-item is-last-child element-item--static element-item--vertical"
+                                data-mr="0" data-ml="0" data-element-justify="center" data-is="element"
+                                data-id="226252" data-e-id="button01" data-mod-id="2"
+                                data-components="[&quot;button&quot;]">
+                                <div class="element-content element-content--static element-content--vertical"
+                                    style>
+                                    <div class="buttons-holder text-position-disabled single no-price">
+                                        <div class="button-wrapper button-1 " data-item-id="1">
+                                            <div class="button-container"><a
+                                                    class="component-button  text--auto effect--zoom line_size--small weight--bold size--large filled squared"
+                                                    data-action="modal" data-modal-id="form61397"
+                                                    data-component="button">
+                                                    <div
+                                                        class="btn-content btn-content-icon-text icon-on-left">
+                                                        <div class="component-icon component-ico size--custom style--none color--contrast border--small shape--none scale--contain"
+                                                            style="--iconSize:  30px;"
+                                                            data-component="icon">
+                                                            <div class="icon-wrap"><svg
+                                                                    class="icon vector-icon"
+                                                                    xmlns="http://www.w3.org/2000/svg">
+                                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                                        xlink:href="img/14129981.svg#icon" />
+                                                                </svg></div>
+                                                        </div><span class="btn-text">ENCOMENDAR COM PROMOÇÃO</span>
+                                                    </div>
+                                                </a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-area_spacer main-area_spacer--bottom"></div>
+    </div>
+</div>
+</div>
+<div class="b_block b_662759 was-view" data-is="block" data-id="662759" data-b-id="BUNDLE" data-mod-id="GRID9"
+data-components="[&quot;background&quot;]">
+<div class="container-fluid  indent" data-contrast="dark">
+    <div class="component-bg bg-color " data-type="color" data-component="background">
+        <div class="overlay " data-opacity="1"></div>
+    </div>
+    <div class="main-area">
+        <div class="main-area_spacer main-area_spacer--top"></div>
+        <div class="layout-type-column gap-zero gap-am-zero grid-zone container lg-container" data-is="zone"
+            data-id="584352" data-e-id="zone_grid" data-mod-id="0" data-components="[]">
+            <div class="flexbe-row align-items-stretch justify-content-start only-row" data-item-id="1">
+                <div class="flexbe-column gap-item first-column" data-cols="12" data-item-id="1">
+                    <div class="content-zone content-zone--vertical content-zone--single content-zone--fill-color px-0 py-0 pm-0"
+                        data-is="zone" data-id="600153" data-e-id="zone" data-mod-id="0"
+                        data-zone-type="column" data-action="none" data-components="[]"
+                        data-contrast="dark">
+                        <div class="content-zone__bg content-zone__bg--fill_color "></div>
+                        <!-- Swiper -->
+                        <div class="flexslider">
+                            <ul class="slides">
+                                <li data-thumb="img/9.jpg">
+                                    <img src="img/9.jpg">
+                                </li>
+                                <li data-thumb="img/9_2.jpg">
+                                    <img src="img/9_2.jpg">
+                                </li>
+                                <li data-thumb="img/9_3.jpg">
+                                    <img src="img/9_3.jpg">
+                                </li>
+                                <li data-thumb="img/9_4.jpg">
+                                    <img src="img/9_4.jpg">
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Swiper /-->
+                    </div>
+                </div>
+                <div class="flexbe-column gap-item last-column" data-cols="12" data-item-id="2">
+                    <div class="content-zone content-zone--vertical content-zone--single content-zone--fill-color px-20 py-20 pm-20"
+                        data-is="zone" data-id="974081" data-e-id="zone" data-mod-id="0"
+                        data-zone-type="column" data-action="none" data-components="[]"
+                        data-contrast="dark">
+                        <div class="content-zone__bg content-zone__bg--fill_color "></div>
+                        <div class="elements-list elements-list--vertical elements-list--only elements-list--allowFill"
+                            data-element-align="center" data-element-justify="start" data-direction="y"
+                            data-name="zone">
+                            <div class="element-item is-first-child element-item--static element-item--vertical"
+                                data-mr="0" data-ml="0" data-element-justify="center" data-is="element"
+                                data-id="936516" data-e-id="text01" data-mod-id="1" data-components="[]">
+                                <div class="element-content element-content--static element-content--vertical"
+                                    style>
+                                    <div class="element-text text-style-title text-align-center">
+                                        <p>SOUTIEN DESPORTIVO GENIE BRA</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="element-item element-item--static element-item--vertical"
+                                data-mr="0" data-ml="1" data-element-justify="start" data-is="element"
+                                data-id="591918" data-e-id="text01" data-mod-id="0" data-components="[]">
+                                <div class="element-content element-content--static element-content--vertical"
+                                    style>
+                                    <p>
+                                        O maior grau de absorção dos movimentos oscilantes do peito durante as actividades desportivas aumenta o conforto e a eficiência do treino!
+                                        <br> O Genie Bra foi cuidadosamente concebido para o seu treino:
+                                    </p>
+                                    <div class="element-text text-style-content text-align-left">
+                                        <p><span
+                                                style="color: rgb(255, 0, 0); font-weight: 700;">✔</span><span
+                                                style="font-weight: 700;">&nbsp;</span>O copo de espuma fechado com armações ocultas separa e segura os seus seios.
+                                        </p>
+                                        <p><span
+                                                style="color: rgb(255, 0, 0); font-weight: 700;">✔</span><span
+                                                style="font-weight: 700;">&nbsp;</span>No interior há uma chávena moldada lisa feita de espuma macia e respirável.
+                                                <br><span
+                                                style="font-weight: 700; color: rgb(255, 0, 0);">✔</span>
+                                                O design de copos inclinados centra o busto para uma bela silhueta.<br><span
+                                                style="font-weight: 700; color: rgb(255, 0, 0);">✔&nbsp;</span>O cinto é apertado e largo - fornece um apoio fiável.<br><span
+                                                style="color: rgb(255, 0, 0); font-weight: 700;">✔&nbsp;</span>As alças de ombro estendidas distribuem a pressão uniformemente sobre os ombros
+
+                                            <br><span
+                                                style="font-weight: 700; color: rgb(255, 0, 0);">✔&nbsp;</span>Adequado para todos os tipos de actividade física: corrida, aptidão física.<br><span
+                                                style="font-weight: 700; color: rgb(255, 0, 0);">✔&nbsp;</span>O material do soutien tem características respiráveis e de transporte de humidade.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="element-item element-item--static element-item--vertical"
+                                data-mr="0" data-ml="0" data-element-justify="center" data-is="element"
+                                data-id="586092" data-e-id="text01" data-mod-id="title_card_ru"
+                                data-components="[]">
+                                <div class="element-content element-content--static element-content--vertical"
+                                    style>
+                                    <div class="element-text text-style-subtitle text-align-center">
+                                        <p><span style="font-weight: 400;">Preço sem promoção:&nbsp;</span><s><span style="font-weight: 400;">70
+                                                    <x-currency>€</x-currency>
+                                                </span></s></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="element-item element-item--static element-item--vertical"
+                                data-mr="0" data-ml="0" data-element-justify="center" data-is="element"
+                                data-id="526099" data-e-id="text01" data-mod-id="title_ru"
+                                data-components="[]">
+                                <div class="element-content element-content--static element-content--vertical"
+                                    style>
+                                    <div class="element-text text-style-title text-align-center">
+                                        <p>Preço promoção hoje:</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="element-item element-item--static element-item--vertical"
+                                data-mr="0" data-ml="0" data-element-justify="center" data-is="element"
+                                data-id="385854" data-e-id="text01" data-mod-id="title_ru"
+                                data-components="[]">
+                                <div class="element-content element-content--static element-content--vertical"
+                                    style>
+                                    <div class="element-text text-style-title text-align-center">
+                                        <p><span style="color: rgb(255, 0, 0);">
+                                                <x-newprice>35</x-newprice>
+                                                <x-currency>€</x-currency>
+                                            </span></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="element-item is-last-child element-item--static element-item--vertical"
+                                data-mr="0" data-ml="0" data-element-justify="center" data-is="element"
+                                data-id="226252" data-e-id="button01" data-mod-id="2"
+                                data-components="[&quot;button&quot;]">
+                                <div class="element-content element-content--static element-content--vertical"
+                                    style>
+                                    <div class="buttons-holder text-position-disabled single no-price">
+                                        <div class="button-wrapper button-1 " data-item-id="1">
+                                            <div class="button-container"><a
+                                                    class="component-button  text--auto effect--zoom line_size--small weight--bold size--large filled squared"
+                                                    data-action="modal" data-modal-id="form61397"
+                                                    data-component="button">
+                                                    <div
+                                                        class="btn-content btn-content-icon-text icon-on-left">
+                                                        <div class="component-icon component-ico size--custom style--none color--contrast border--small shape--none scale--contain"
+                                                            style="--iconSize:  30px;"
+                                                            data-component="icon">
+                                                            <div class="icon-wrap"><svg
+                                                                    class="icon vector-icon"
+                                                                    xmlns="http://www.w3.org/2000/svg">
+                                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                                        xlink:href="img/14129981.svg#icon" />
+                                                                </svg></div>
+                                                        </div><span class="btn-text">ENCOMENDAR COM PROMOÇÃO</span>
+                                                    </div>
+                                                </a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-area_spacer main-area_spacer--bottom"></div>
+    </div>
+</div>
+</div>
 
         <div class="b_block b_176410 was-view" data-is="block" data-id="176410" data-b-id="BUNDLE" data-mod-id="GRID54"
             data-components="[&quot;background&quot;]">
@@ -2548,7 +3045,7 @@
                                             <div class="element-content element-content--static element-content--vertical"
                                                 style>
                                                 <div class="element-text text-style-title text-align-center">
-                                                    <p>- LIVRARE -</p>
+                                                    <p>- ENTREGA -</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -2570,8 +3067,7 @@
                                                     <div class="element-text--block">
                                                         <div
                                                             class="element-text--title text-style-content text-align-inherit">
-                                                            <p><span style="font-weight: 400;">Livrare prin curier în
-                                                                    termen de 1-2 zile</span></p>
+                                                            <p><span style="font-weight: 400;">Entrega por mensageiro dentro de 1-3 dias</span></p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -2595,8 +3091,7 @@
                                                     <div class="element-text--block">
                                                         <div
                                                             class="element-text--title text-style-content text-align-inherit">
-                                                            <p><span style="font-weight: 400;">Plata comenzii la
-                                                                    primire</span></p>
+                                                            <p><span style="font-weight: 400;">Pagamento no acto da receção</span></p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -2620,8 +3115,7 @@
                                                     <div class="element-text--block">
                                                         <div
                                                             class="element-text--title text-style-content text-align-inherit">
-                                                            <p><span style="font-weight: 400;">Produsul este
-                                                                    pre-verificat înainte de expediere.</span>
+                                                            <p><span style="font-weight: 400;">As mercadorias são pré-selecionadas antes do envio.</span>
                                                             </p>
 
                                                         </div>
@@ -2659,7 +3153,7 @@
                                     <div class="element-content element-content--static element-content--vertical"
                                         style>
                                         <div class="element-text text-style-title text-align-inherit">
-                                            <p>- RECENZII CLIENȚILOR -</p>
+                                            <p>- FEEDBACK DOS CLIENTES -</p>
                                         </div>
                                     </div>
                                 </div>
@@ -2707,7 +3201,7 @@
                                                 <div class="element-content element-content--static element-content--vertical"
                                                     style>
                                                     <div class="element-text text-style-subtitle text-align-center">
-                                                        <p>"Vă mulțumim foarte mult pentru calitatea produsului!”</p>
+                                                        <p>"Muito obrigado pela qualidade do produto!"</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -2718,12 +3212,7 @@
                                                 <div class="element-content element-content--static element-content--vertical"
                                                     style>
                                                     <h1 class="element-text text-style-content text-align-center">
-                                                        <p>Produsul a sosit în a doua zi după comandă. Am comandat
-                                                            pantaloni Alpha și o curea pentru ei. Totul se potrivește,
-                                                            ca și cum ar fi fost cusuți pe mine, foarte convenabil. Nu
-                                                            transpir deloc în ei. Voi comanda cu siguranța mai multe
-                                                            perechi. Vă mulțumim foarte mult pentru calitatea
-                                                            produsului!
+                                                        <p>O artigo chegou no segundo dia após a encomenda. Encomendei as calças e o cinto. Tudo me serve como se tivesse sido feito para mim e muito confortável. Estas calças não são quentes para trabalhar. Definitivamente, voltarei a encomendar. Muito obrigado pela qualidade das mercadorias!
                                                         </p>
                                                     </h1>
                                                 </div>
@@ -2797,7 +3286,7 @@
                                                 <div class="element-content element-content--static element-content--vertical"
                                                     style>
                                                     <div class="element-text text-style-subtitle text-align-center">
-                                                        <p>“ ...efect uimitor!”
+                                                        <p>"...efeito incrível!"
                                                         </p>
                                                     </div>
                                                 </div>
@@ -2809,13 +3298,7 @@
                                                 <div class="element-content element-content--static element-content--vertical"
                                                     style>
                                                     <h1 class="element-text text-style-content text-align-center">
-                                                        <p>Am încercat multe modele diferite de lenjerie de slăbire, dar
-                                                            Cera Slender are un efect uimitor! Mereu când îmbrac
-                                                            lenjeria mă simt ca o modela în ea, dar cel mai interesant
-                                                            lucru este că, după o lună, pielea mea s-a netezit și am
-                                                            pierdut câteva kilograme. Mulțumesc foarte mult!
-
-                                                        </p>
+                                                        <p>Já experimentei muitos modelos diferentes de sutiãs invisíveis, mas o Fly Bra é simplesmente um efeito incrível! Ele é absolutamente invisível mesmo sob o vestido mais aberto, prende-se com segurança mesmo que se transpire! Encomendei também os leggins, devem ser entregues amanhã. Muito obrigada!</p>
                                                     </h1>
                                                 </div>
                                             </div>
@@ -2843,7 +3326,7 @@
                                                         <div class="element-text--block">
                                                             <div
                                                                 class="element-text--title text-style-text text-align-inherit">
-                                                                <p> Ioana</p>
+                                                                <p>Júlia</p>
                                                             </div>
 
                                                         </div>
@@ -2888,7 +3371,7 @@
                                                 <div class="element-content element-content--static element-content--vertical"
                                                     style>
                                                     <div class="element-text text-style-subtitle text-align-center">
-                                                        <p>"Nu este prima dată când comand în acest magazin..."</p>
+                                                        <p>"Não é a primeira vez que encomendo nesta loja..."</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -2899,10 +3382,7 @@
                                                 <div class="element-content element-content--static element-content--vertical"
                                                     style>
                                                     <h1 class="element-text text-style-content text-align-center">
-                                                        <p>Nu este prima dată când comand în acest magazin și totul este
-                                                            întotdeauna la cel mai înalt nivel, atât produsul, cât și
-                                                            calitatea. Chiar ieri mi-am luat pantalonii și cureaua totul
-                                                            a venit, sunt fericit. Recomand magazinul.</p>
+                                                        <p>Não é a primeira vez que encomendo nesta loja e tudo está sempre ao mais alto nível e o produto e a qualidade. Ainda ontem recebi um par de sapatilhas Venom e as meias, tudo me serve, estou satisfeito. Recomendo a loja.</p>
                                                     </h1>
                                                 </div>
                                             </div>
@@ -2930,7 +3410,7 @@
                                                         <div class="element-text--block">
                                                             <div
                                                                 class="element-text--title text-style-text text-align-inherit">
-                                                                <p><strong><strong>Alexandru</strong></strong></p>
+                                                                <p><strong><strong>Alex</strong></strong></p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2974,8 +3454,7 @@
                                                 <div class="element-content element-content--static element-content--vertical"
                                                     style>
                                                     <div class="element-text text-style-subtitle text-align-center">
-                                                        <p>"Toate cusăturile sunt calitative, calitatea este
-                                                            excelentă...”</p>
+                                                        <p>"Todas as costuras são limpas, a qualidade é de primeira..."</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -2986,13 +3465,7 @@
                                                 <div class="element-content element-content--static element-content--vertical"
                                                     style>
                                                     <h1 class="element-text text-style-content text-align-center">
-                                                        <p>Am comandat pantaloni Alfa pentru soțul meu, și Leggings Flex
-                                                            cu sutien sport pentru mine. Am rămas foarte mulțumiți de
-                                                            comandă. Toate cusăturile sunt calitative, dimensiunile
-                                                            corespund. Merg la antrenament în leggings de o lună acum și
-                                                            într-adevăr pielea a devenit mai fină și treptat pierd din
-                                                            greutate. Voi comanda în continuare din acest magazin.
-                                                        </p>
+                                                        <p>Encomendei para o meu marido as calças Alfa e o jegggings para mim. Estou muito satisfeita com o meu pedido. Todas as costuras são limpas, a qualidade é ótima e os tamanhos são os mais adequados. Uso os Jeggings o tempo tudo, sonhei sempre com estas calças e vejo-me muito bem usando-as! Vou encomendar mais.</p>
                                                     </h1>
                                                 </div>
                                             </div>
@@ -3020,7 +3493,7 @@
                                                         <div class="element-text--block">
                                                             <div
                                                                 class="element-text--title text-style-text text-align-inherit">
-                                                                <p><strong><strong>Maria</strong></strong></p>
+                                                                <p><strong><strong>Cata</strong></strong></p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3098,15 +3571,18 @@
                                                 <div class="element-text text-style-content text-align-inherit">
                                                     <div class="foot_ru_center"
                                                         style="text-align: center; margin: 0px auto; padding: 30px;">
-                                                        <p>E-OUTLET LLP, STRADA ELEVULUI 42, BUCUREȘTI 077042, ROMANIA
+                                                        <p>E-OUTLET LLP, Calçada da Ajuda 104, 1300-006 Lisboa, Portugal
                                                         </p>
 
 
 
 
                                                         <p class="conf-link doclinks">
-                                                            <a class="nav-link" href="policy.html"
-                                                                target="_blanc">policy</a>
+                                                            <a class="nav-link" href="/privacypolicy"
+                                                                target="_blanc">Privacy policy</a> <br>
+                                                                <a class="nav-link"  href="/general-conditions-of-sale"
+                                                                target="_blanc">General conditions of sale</a> <br>
+                                                                <a class="nav-link" href="/legal-warning" target="_blanc">Legal warning</a>
                                                         </p>
 
                                                         <!--       <p class="policy-link doclinks"> -->
@@ -3128,107 +3604,6 @@
             </div>
         </div>
     </footer>
-    <div class="modal-list">
-
-        <div class="m_modal m_form59741" data-is="modal" data-id="form59741" data-m-id="GRID" data-mod-id="4"
-            data-components="[&quot;background&quot;]" data-site-block-type="modal">
-            <div class="modal-data" data-contrast="light">
-                <div class="component-bg bg-color " data-type="color" data-component="background">
-                    <div class="overlay " data-opacity="1"></div>
-                </div>
-                <div class="scroller" data-overlay="true">
-                    <div class="modal-content width--s"><a class="close close-times"></a>
-                        <div class="layout-type-column gap-zero gap-am-zero">
-                            <div class="flexbe-row align-items-stretch justify-content-start only-row" data-item-id="1">
-                                <div class="flexbe-column gap-item only-column" data-cols="24" data-item-id="1">
-                                    <div class="content-zone content-zone--vertical content-zone--single content-zone--fill-color content-zone--rounded px-40 py-40 pm-40"
-                                        data-is="zone" data-id="708354" data-e-id="zone" data-mod-id="0"
-                                        data-zone-type="modal" data-action="none" data-components="[]"
-                                        data-contrast="dark">
-                                        <div class="content-zone__bg content-zone__bg--fill_color "></div>
-                                        <div class="elements-list elements-list--vertical elements-list--only"
-                                            data-element-align="start" data-element-justify="center" data-direction="y"
-                                            data-name="zone">
-                                            <div class="element-item is-first-child element-item--static element-item--vertical"
-                                                data-mr="0" data-ml="0" data-element-justify="center" data-is="element"
-                                                data-id="178413" data-e-id="text01" data-mod-id="4"
-                                                data-site-block-type="element" data-components="[]">
-                                                <div class="element-content element-content--static element-content--vertical"
-                                                    style>
-                                                    <div class="element-text text-style-subtitle text-align-inherit">
-                                                        <p><span style="font-weight: 700;">Обратный звонок</span></p>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="m_modal m_form61397" data-is="modal" data-id="form61397" data-m-id="GRID" data-mod-id="4"
-            data-components="[&quot;background&quot;]">
-            <div class="modal-data" data-contrast="light">
-                <div class="component-bg bg-color " data-type="color" data-component="background">
-                    <div class="overlay " data-opacity="1"></div>
-                </div>
-                <div class="scroller" data-overlay="true">
-                    <div class="modal-content width--s"><a class="close close-times"></a>
-                        <div class="layout-type-column gap-zero gap-am-zero">
-                            <div class="flexbe-row align-items-stretch justify-content-start only-row" data-item-id="1">
-                                <div class="flexbe-column gap-item only-column" data-cols="24" data-item-id="1">
-                                    <div class="content-zone content-zone--vertical content-zone--single content-zone--fill-color content-zone--rounded px-40 py-40 pm-40"
-                                        data-is="zone" data-id="360590" data-e-id="zone" data-mod-id="0"
-                                        data-zone-type="modal" data-action="none" data-components="[]"
-                                        data-contrast="dark">
-                                        <div class="content-zone__bg content-zone__bg--fill_color "></div>
-                                        <div class="elements-list elements-list--vertical elements-list--only"
-                                            data-element-align="start" data-element-justify="center" data-direction="y"
-                                            data-name="zone">
-                                            <div class="element-item is-first-child element-item--static element-item--vertical"
-                                                data-mr="0" data-ml="0" data-element-justify="center" data-is="element"
-                                                data-id="437391" data-e-id="text01" data-mod-id="4"
-                                                data-components="[]">
-                                                <div class="element-content element-content--static element-content--vertical"
-                                                    style>
-                                                    <div class="element-text text-style-subtitle text-align-inherit">
-                                                        <p>Заказать сумку</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="element-item element-item--static element-item--vertical"
-                                                data-mr="0" data-ml="0" data-element-justify="center" data-is="element"
-                                                data-id="942218" data-e-id="text01" data-mod-id="title_card_ru"
-                                                data-components="[]">
-                                                <div class="element-content element-content--static element-content--vertical"
-                                                    style>
-                                                    <div class="element-text text-style-subtitle text-align-inherit">
-                                                        <p><span style="font-weight: 400;">Сейчас&nbsp;</span><span
-                                                                style="color: rgb(240, 0, 0);">за <x-newprice>1390
-                                                                </x-newprice>
-                                                                <x-currency>lei</x-currency>.
-                                                            </span></p>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
 
     <link class="font-setup-import" rel="stylesheet" href="css/css_001.css">
     <style class="font-setup">
@@ -3293,16 +3668,12 @@
                         }
                     </style>
                     <form action method="post" name="ModalForm">
-                        <input name="csrf_token" type="hidden" value="0786efe44e598211b87a511be0056e89:1623166291">
-                        <select name="offer" class="form-control country_chang" style="display: none;">
-                            <option data-country-code="RU" selected="selected" value="24730">
-                                Россия </option>
-                        </select>
+                      
 
-                        <input type="text" name="name" placeholder="Numele dvs." required>
-                        <input type="tel" name="phone" placeholder="Numărul dvs. de telefon" required>
+                        <input type="text" name="name" placeholder="O seu nome" required>
+                        <input type="tel" name="phone" placeholder="O seu telefone" required>
                         <br> <br>
-                        <button type="submit" class="modal-submit-btn">COMANDĂ</button>
+                        <button type="submit" class="modal-submit-btn">ENCOMENDAR</button>
 
 
                     </form>
