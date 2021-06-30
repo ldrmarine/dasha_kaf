@@ -1,0 +1,38 @@
+/* Code tidied up by ScrapBook */
+@media screen and (max-width: 767px) {
+}
+[data-w-id="MENU01"] { z-index: 999; }
+.no-gutter[data-e-id="media01"] .element-content > [data-component] { overflow: hidden; }
+.no-gutter.is-first-child[data-e-id="media01"] .element-content > [data-component] { border-top-left-radius:  var(--topLeftRadius); border-top-right-radius:  var(--topRightRadius); }
+.no-gutter.is-last-child[data-e-id="media01"] .element-content > [data-component] { border-bottom-left-radius:  var(--bottomLeftRadius); border-bottom-right-radius:  var(--bottomRightRadius); }
+[data-e-id="table01"] .table-wrap { position: relative; width: 100%; display: flex; flex-flow: row wrap; justify-content: inherit; align-items: inherit; }
+[data-e-id="zone"] { pointer-events: all; }
+.content-zone--rounded[data-e-id="zone"] .elements-list { mask-image: none; }
+[data-e-id="zone_header"] .elements-list { display: flex; }
+[data-m-id="GRID"] .close-times { position: absolute; font-size: 14px; color: rgb(119, 119, 119); top: 20px; right: 20px; }
+[data-m-id="GRID"] .modal-content { display: flex; flex-flow: row wrap; width: 100%; max-width: 800px; }
+[data-m-id="GRID"] .modal-content.width--s { max-width: 400px; }
+[data-m-id="GRID"] .modal-content.width--m { max-width: 800px; }
+[data-m-id="GRID"] .layout-type-column { width: 100%; flex-grow: 1; }
+@media screen and (min-width: 768px) {
+}
+@media screen and (max-width: 767px) {
+  body.adaptive [data-m-id="GRID"] .close-times { font-size: 18px; }
+  body.adaptive [data-m-id="GRID"] .scroller { display: flex; flex-flow: column nowrap; justify-content: flex-start; }
+  body.adaptive [data-m-id="GRID"] .modal-content { flex-grow: 1; flex-shrink: 0; width: 100%; max-width: 100%; }
+  body.adaptive [data-m-id="GRID"] .flexbe-row { min-height: 100%; }
+  body.adaptive [data-m-id="GRID"] .flexbe-column.only-column .elements-list { --elementAlign:  center; }
+  body.adaptive [data-m-id="GRID"] .content-zone--rounded { --topRightRadius:  0px; --bottomRightRadius:  0px; --topLeftRadius:  0px; --bottomLeftRadius:  0px; }
+}
+@media screen and (max-width: 767px) {
+}
+@media screen and (max-width: 767px) {
+}
+@media screen and (min-width: 571px) and (max-width: 767px) {
+}
+@media screen and (max-width: 570px) {
+}
+@media screen and (max-width: 767px) {
+}
+@media screen and (max-width: 350px) {
+}

@@ -1,0 +1,34 @@
+/* Code tidied up by ScrapBook */
+@media screen and (max-width: 767px) {
+  body.adaptive .cards-am-1 .flexbe-card { flex-basis: 100%; max-width: 100%; }
+  body.adaptive .flexbe-cards-root { flex-grow: 1; }
+}
+@media screen and (max-width: 570px) {
+}
+@media screen and (max-width: 767px) {
+  .form-fields .form-field-text__input, .quiz-fields .form-field-text__input { font-size: 16px; min-height: 46px; }
+}
+@media screen and (max-width: 767px) {
+  body.adaptive .component-form.inline .form-submit { padding-top: 0px; }
+}
+@media screen and (max-width: 767px) {
+}
+@media screen and (max-width: 767px) {
+  body.adaptive .component-menu { padding: 0px; margin: 0px; }
+  body.adaptive .component-menu.style--underline a:hover span::after, body.adaptive .component-menu.style--underline li.open a span::after { opacity: 0; }
+  body.adaptive .component-menu-list { flex-grow: 1; margin: -7px -15px; }
+  body.adaptive .component-menu-list.nowrap-list { flex-wrap: wrap; }
+  body.adaptive .component-menu-list a { font-size: 16px; line-height: 26px; padding: 7px 15px; }
+}
+@media screen and (min-width: 768px) {
+}
+@media screen and (max-width: 767px) {
+}
+@media screen and (max-width: 350px) {
+}
+@media screen and (max-width: 767px) {
+  body.adaptive .slider-button { font-size: 40px; padding: 0px 0.25em; transform: translateZ(0px); }
+}
+@media screen and (max-width: 767px) {
+  body.adaptive .slider-pagination.type--thumbs { --thumbPad:  10px; --thumbSize:  50px; }
+}
